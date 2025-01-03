@@ -17,7 +17,7 @@ items = [
   #"media-gfx/flameshot", # Investigate this vs hyprshot
   "media-sound/pavucontrol", # PulseAudio VolUme Controller
   "media-sound/playerctl", # CLI utility to control media players over MPRIS
-  "media-sound/pulseaudio" # Sound server
+  "media-sound/pulseaudio", # Sound server
   #"kde-misc/krusader", # File Explorer (might switch, check out pcmanfm)
   "sys-auth/hyprpolkitagent", # Polkit authentication daemon
   "sys-auth/seatd", # Strong dependency to make Hyprland work, requires "builtin" and "server" USE flags without additional packages

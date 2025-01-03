@@ -86,6 +86,7 @@ x11-libs/libXxf86vm abi_x86_32 # Required by games-util/steam-launcher
 x11-libs/xcb-util-keysyms abi_x86_32 # Required by games-util/steam-launcher
 
 dev-libs/libdbusmenu gtk3 # Required by net-misc/remmina
+media-plugins/alsa-plugins pulseaudio # Required by net-misc/remmina
 
 ### VIRTUALIZATION
 app-emulation/qemu alsa gtk keyutils lzo pipewire spice ssh udev usb usbredir virgl zstd # USE flags for qemu

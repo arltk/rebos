@@ -11,6 +11,7 @@ items = [
 # System Utilities
   "app-admin/syslog-ng", # Logging
   "app-admin/logrotate", # Weak dependency for app-admin/syslog-ng
+  "app-laptop/laptop-mode-tools", # Tools for laptop users
   "net-fs/cifs-utils", # Support for SMB shares
   "net-misc/chrony", # NTP daemon
   "net-misc/dhcpcd", # Backup DHCP daemon
@@ -42,6 +43,7 @@ items = [
   "app-arch/xz-utils", # Support for xz archives
   "app-arch/zip", # Support for zip archives
   "app-arch/zstd", # Support for zstd arcivces
+  "app-misc/brightnessctl", # Brightness settings for laptops (CLI)
   "app-misc/fastfetch", # Displays information about the current system
   "app-misc/nerdfetch", # Displays less information than fastfetch, but in cool fonts (requires nerdfonts). Requires GURU repository
   "app-misc/tmux", # Terminal multiplexer (better than screen)

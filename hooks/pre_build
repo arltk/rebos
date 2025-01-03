@@ -20,12 +20,12 @@ fi
 echo -e "\033[0;90m[\033[1;92mInfo\033[0;90m] :\033[0m Copying over portage package configurations"
 rebos_portage_path="$rebos_path/system_files/portage"
 for folder in "package.accept_keywords" "package.env" "package.license" "package.use"; do
-  if [ -d "$folder" ]; then
+  if [ -d "$rebos_portage_path/$folder" ]; then
     [ $debug -ge 1 ] && echo -e "\033[0;90m[\033[1;94mDebug\033[0;90m] :\033[0m Copying $rebos_portage_path/$folder/ /etc/portage/$folder/"
     if [ $debug -ge 2 ]; then
-      sudo cp -rv "$rebos_portage_path/$folder" "/etc/portage/"
+      sudo cp -rfv "$rebos_portage_path/$folder" "/etc/portage/"
     else
-      sudo cp -r "$rebos_portage_path/$folder" "/etc/portage/"
+      sudo cp -rf "$rebos_portage_path/$folder" "/etc/portage/"
     fi
   fi
 done

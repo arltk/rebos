@@ -1,7 +1,8 @@
 ### CORE
-app-misc/nerdfetch ~amd64 # Required
-app-shells/zoxide ~amd64 # Required
-media-fonts/nerdfonts ~amd64 # Required
+app-misc/brightnessctl ~amd64 # Required to emerge
+app-misc/nerdfetch ~amd64 # Required to emerge
+app-shells/zoxide ~amd64 # Required to emerge
+media-fonts/nerdfonts ~amd64 # Required to emerge
 
 ### HYPRLAND
 

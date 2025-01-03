@@ -39,9 +39,6 @@ if [ $(command -v zsh) ]; then
   echo -e "\033[0;90m[\033[1;92mInfo\033[0;90m] :\033[0m Upgrading shell to ZSH"
   [ $debug -ge 1 ] && echo -e "\033[0;90m[\033[1;94mDebug\033[0;90m] :\033[0m Changing shell to ZSH"
   chsh --shell "$(which zsh)" || exit 1
-  [ $debug -ge 1 ] && echo -e "\033[0;90m[\033[1;94mDebug\033[0;90m] :\033[0m Appending $rebos_zshrc to $HOME/.zshrc"
-  cat $rebos_zshrc >> $HOME/.zshrc"
-  
 else
-[ $debug -ge 1 ] && echo -e "\033[0;90m[\033[1;94mDebug\033[0;90m] :\033[0m ZSH is not installed"
+  [ $debug -ge 1 ] && echo -e "\033[0;90m[\033[1;94mDebug\033[0;90m] :\033[0m ZSH is not installed"
 fi

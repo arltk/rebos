@@ -1,0 +1,47 @@
+#!/bin/bash
+
+# Define variables
+debug=2
+rebos_path="$HOME/.config/rebos"
+rebos_system_files="$rebos_path/system_files"
+rebos_zshrc="$rebos_system_files/zshrc.sh"
+#
+# Restore stowed configs (if ~/dotfiles exists)
+echo -e "\033[0;90m[\033[1;92mInfo\033[0;90m] :\033[0m Restoring configurations"
+[ $debug -ge 1 ] && echo -e "\033[0;90m[\033[1;92mInfo\033[0;90m] :\033[0m Checking to see if $HOME/dotfiles exists"
+if [ -d "$HOME/dotfiles" ]; then
+  [ $debug -ge 1 ] && echo -e "\033[0;90m[\033[1;92mInfo\033[0;90m] :\033[0m $HOME/dotfiles exists"
+else
+  [ $debug -ge 1 ] && echo -e "\033[0;90m[\033[1;92mInfo\033[0;90m] :\033[0m $HOME/dotfiles does not exist. Attempting to pull latest git commit"
+  if [ $debug -ge 2 ]; then
+    git clone https://github.com/arltk/dotfiles --recurse $HOME/dotfiles || exit 1
+  else
+    git clone https://github.com/arltk/dotfiles --recurse $HOME/dotfiles > /dev/null || exit 1
+  fi
+fi
+[ $debug -ge 2 ] && echo -e "\033[0;90m[\033[1;92mInfo\033[0;90m] :\033[0m Checking to see if app-admin/stow is installed"
+[ ! $(command -v stow) ] && echo -e "\033[0;90m[\033[1;91mError\033[0;90m] :\033[0m Stow is not installed" && exit 1
+[ $debug -ge 1 ] && echo -e "\033[0;90m[\033[1;92mInfo\033[0;90m] :\033[0m Stowing all dotfiles"
+pushd "$HOME/dotfiles/"
+stow --adopt * || exit 1
+if [ $debug -ge 2 ]; then
+  git restore . || exit 1
+else
+  git restore . > /dev/null || exit 1
+fi
+popd
+
+
+# Change default shell to zsh
+[ $debug -ge 1 ] && echo -e "\033[0;90m[\033[1;94mDebug\033[0;90m] :\033[0m Checking to see if ZSH is installed"
+if [ $(command -v zsh) ]; then
+  [ $debug -ge 1 ] && echo -e "\033[0;90m[\033[1;94mDebug\033[0;90m] :\033[0m ZSH is installed"
+  echo -e "\033[0;90m[\033[1;92mInfo\033[0;90m] :\033[0m Upgrading shell to ZSH"
+  [ $debug -ge 1 ] && echo -e "\033[0;90m[\033[1;94mDebug\033[0;90m] :\033[0m Changing shell to ZSH"
+  chsh --shell "$(which zsh)" || exit 1
+  [ $debug -ge 1 ] && echo -e "\033[0;90m[\033[1;94mDebug\033[0;90m] :\033[0m Appending $rebos_zshrc to $HOME/.zshrc"
+  cat $rebos_zshrc >> $HOME/.zshrc"
+  
+else
+[ $debug -ge 1 ] && echo -e "\033[0;90m[\033[1;94mDebug\033[0;90m] :\033[0m ZSH is not installed"
+fi

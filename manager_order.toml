@@ -1,0 +1,12 @@
+begin = [
+	"init",
+	"system",
+  "pipx",
+  "flatpak",
+  "cargo",
+]
+
+end = [
+	"openrc_default",
+	"openrc_boot",
+]

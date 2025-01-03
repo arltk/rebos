@@ -1,0 +1,29 @@
+#!/usr/bin/bash
+
+# Variables
+debug=1
+
+# Configure GURU
+echo -e "\033[0;90m[\033[1;92mInfo\033[0;90m] :\033[0m Configuring GURU"
+[ $debug -ge 1 ] && echo -e "\033[0;90m[\033[1;94mDebug\033[0;90m] :\033[0m Add GURU as a repository"
+sudo eselect repository enable guru 2>/dev/null || exit 1
+[ $debug -ge 1 ] && echo -e "\033[0;90m[\033[1;94mDebug\033[0;90m] :\033[0m Sync GURU"
+sudo emerge --sync guru || exit 1
+[ $debug -ge 1 ] && echo -e "\033[0;90m[\033[1;94mDebug\033[0;90m] :\033[0m GURU is configured successfully"
+
+# Configure steam-overlay
+echo -e "\033[0;90m[\033[1;92mInfo\033[0;90m] :\033[0m Configuring steam-overlay"
+[ $debug -ge 1 ] && echo -e "\033[0;90m[\033[1;94mDebug\033[0;90m] :\033[0m Add steam-overlay as a repository"
+sudo eselect repository enable steam-overlay 2>/dev/null || exit 1
+[ $debug -ge 1 ] && echo -e "\033[0;90m[\033[1;94mDebug\033[0;90m] :\033[0m Sync steam-overlay"
+sudo emerge --sync steam-overlay || exit 1
+[ $debug -ge 1 ] && echo -e "\033[0;90m[\033[1;94mDebug\033[0;90m] :\033[0m steam-overlay is configured successfully"
+
+# Configure flatpak
+echo -e "\033[0;90m[\033[1;92mInfo\033[0;90m] :\033[0m Configuring Flatpak"
+if [ $debug -ge 1 ]; then
+  echo -e "\033[0;90m[\033[1;94mDebug\033[0;90m] :\033[0m Enable Flathub for Flatpaks"
+  flatpak remote-add --user --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo || exit 1
+else 
+  flatpak remote-add --user --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo > /dev/null || exit 1
+fi

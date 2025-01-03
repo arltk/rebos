@@ -1,0 +1,13 @@
+[managers.system]
+items = [
+  "net-misc/remmina", # RDP & remote-access client
+  "www-client/firefox", # Web browser, requires configs or sync
+]
+
+[managers.flatpak]
+items = [
+  "com.discordapp.Discord", # Discord client
+  "com.protonvpn.www", # ProtonVPN client
+  "me.proton.Mail", # ProtonMail client, might want to forego this in favor of using the web browser
+]
+

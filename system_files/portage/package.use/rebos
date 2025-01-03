@@ -1,0 +1,93 @@
+### CORE
+app-admin/syslog-ng geoip2
+
+*/* networkmanager
+net-misc/networkmanager bluetooth iptables iwd syslog
+
+*/* elogind -systemd # Enable global support for elogind
+
+media-gfx/qrencode png # Required for app-admin/pass
+
+media-fonts/nerdfonts nerdfontssymbolsonly ubuntusans # Required for emerge
+
+### HYPRLAND
+*/* wayland X # Add support for both wayland (main compositor) and X (for X-only apps)
+*/* opengl vulkan # Add 3D graphics support
+kde-frameworks/sonnet qml # Required by gui-wm/hyprland
+app-text/xmlto text # Required by gui-wm/hyprland
+dev-qt/qt5compat icu qml # Required by gui-wm/hyprland
+dev-qt/qtbase icu # Required by gui-wm/hyprland
+
+dev-qt/qtgui egl # Required by sys-auth/hyprpolkitagent
+sys-auth/polkit-qt qt6 # Required by sys-auth/hyprpolkitagent
+
+sys-auth/seatd builtin server # Allow seatd to have the builtin server #TODO: Revamp this
+
+app-crypt/gcr gtk # Required by x11-misc/pcmanfm
+x11-libs/libfm gtk # Required by x11-misc/pcmanfm
+
+www-client/firefox dbus # Required to emerge
+media-libs/libvpx postproc # Required by www-client/firefox
+
+media-sound/pulseaudio bluetooth # Add bluetooth support to pulseaudio
+
+### GUI-CORE
+app-arch/bzip2 abi_x86_32 # Required by games-util/steam-launcher
+app-arch/zstd abi_x86_32 # Required by games-util/steam-launcher
+dev-libs/elfutils abi_x86_32 # Required by games-util/steam-launcher
+dev-libs/expat abi_x86_32 # Required by games-util/steam-launcher
+dev-libs/glib abi_x86_32 # Required by games-util/steam-launcher
+dev-libs/wayland abi_x86_32 # Required by games-util/steam-launcher
+dev-libs/libpcre2 abi_x86_32 # Required by games-util/steam-launcher
+dev-libs/libffi abi_x86_32 # Required by games-util/steam-launcher
+sys-libs/libudev-compat abi_x86_32 # Required by games-util/steam-launcher
+llvm-core/llvm abi_x86_32 # Required by games-util/steam-launcher
+media-libs/flac abi_x86_32 # Required by games-util/steam-launcher
+media-libs/fontconfig abi_x86_32 # Required by games-util/steam-launcher
+media-libs/freetype abi_x86_32 # Required by games-util/steam-launcher
+media-libs/libglvnd abi_x86_32 # Required by games-util/steam-launcher
+media-libs/libpng abi_x86_32 # Required by games-util/steam-launcher
+media-libs/libsndfile abi_x86_32 # Required by games-util/steam-launcher
+media-libs/libogg abi_x86_32 # Required by games-util/steam-launcher
+media-libs/libpulse abi_x86_32 # Required by games-util/steam-launcher
+media-libs/libvorbis abi_x86_32 # Required by games-util/steam-launcher
+media-libs/mesa abi_x86_32 # Required by games-util/steam-launcher
+media-libs/opus abi_x86_32 # Required by games-util/steam-launcher
+media-sound/lame abi_x86_32 # Required by games-util/steam-launcher
+media-sound/mpg123 abi_x86_32 # Required by games-util/steam-launcher
+media-sound/mpg123-base abi_x86_32 # Required by games-util/steam-launcher
+media-plugins/alsa-plugins pulseaudio # Required by games-util/steam-launcher
+net-libs/libasyncns abi_x86_32 # Required by games-util/steam-launcher
+sys-apps/systemd-utils abi_x86_32 # Required by games-util/steam-launcher
+sys-apps/util-linux abi_x86_32 # Required by games-util/steam-launcher
+sys-libs/libcap abi_x86_32 # Required by games-util/steam-launcher
+sys-libs/ncurses abi_x86_32 # Required by games-util/steam-launcher
+sys-libs/pam abi_x86_32 # Required by games-util/steam-launcher
+sys-libs/zlib abi_x86_32 # Required by games-util/steam-launcher
+virtual/libelf abi_x86_32 # Required by games-util/steam-launcher
+virtual/libiconv abi_x86_32 # Required by games-util/steam-launcher
+virtual/libintl abi_x86_32 # Required by games-util/steam-launcher
+virtual/libudev abi_x86_32 # Required by games-util/steam-launcher
+virtual/opengl abi_x86_32 # Required by games-util/steam-launcher
+x11-base/xwayland libei # Required by games-util/steam-launcher
+x11-libs/libdrm abi_x86_32 # Required by games-util/steam-launcher
+x11-libs/libpciaccess abi_x86_32 # Required by games-util/steam-launcher
+x11-libs/libX11 abi_x86_32 # Required by games-util/steam-launcher
+x11-libs/libXau abi_x86_32 # Required by games-util/steam-launcher
+x11-libs/libxcb abi_x86_32 # Required by games-util/steam-launcher
+x11-libs/libXdmcp abi_x86_32 # Required by games-util/steam-launcher
+x11-libs/libXext abi_x86_32 # Required by games-util/steam-launcher
+x11-libs/libXfixes abi_x86_32 # Required by games-util/steam-launcher
+x11-libs/libXrandr abi_x86_32 # Required by games-util/steam-launcher
+x11-libs/libXrender abi_x86_32 # Required by games-util/steam-launcher
+x11-libs/libxshfence abi_x86_32 # Required by games-util/steam-launcher
+x11-libs/libxshmfence abi_x86_32 # Required by games-util/steam-launcher
+x11-libs/libXxf86vm abi_x86_32 # Required by games-util/steam-launcher
+x11-libs/xcb-util-keysyms abi_x86_32 # Required by games-util/steam-launcher
+
+dev-libs/libdbusmenu gtk3 # Required by net-misc/remmina
+
+### VIRTUALIZATION
+app-emulation/qemu alsa gtk keyutils lzo pipewire spice ssh udev usb usbredir virgl zstd # USE flags for qemu
+net-dns/dnsmasq script # Required for virt-manager
+net-libs/gnutls pkcs11 tools # Required for virt-manager

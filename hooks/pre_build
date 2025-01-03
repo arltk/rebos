@@ -1,0 +1,32 @@
+#!/usr/bin/bash
+
+# Define variables
+debug=2
+rebos_path="$HOME/.config/rebos"
+rebos_portage_path="$rebos_path/system_files/portage"
+
+# Configure sudo
+echo -e "\033[0;90m[\033[1;92mInfo\033[0;90m] :\033[0m Configuring sudo (if needed)"
+[ $debug -ge 1 ] && echo -e "\033[0;90m[\033[1;94mDebug\033[0;90m] :\033[0m Checking to see if sudo needs to be configured"
+if [ ! $(command -v sudo) ] || [ $(sudo -lU $USER >/dev/null 2>&1) ]; then #TODO: probably change me
+	echo -e "\033[0;90m[\033[1;91mError\033[0;90m] :\033[0m Sudo is not configured"
+  exit 1
+fi
+[ $debug -ge 1 ] && echo -e "\033[0;90m[\033[1;94mDebug\033[0;90m] :\033[0m Sudo is configured properly"
+
+#TODO: make.conf
+
+# Copy over portage package configurations
+echo -e "\033[0;90m[\033[1;92mInfo\033[0;90m] :\033[0m Copying over portage package configurations"
+rebos_portage_path="$rebos_path/system_files/portage"
+for folder in "package.accept_keywords" "package.env" "package.license" "package.use"; do
+  if [ -d "$folder" ]; then
+    [ $debug -ge 1 ] && echo -e "\033[0;90m[\033[1;94mDebug\033[0;90m] :\033[0m Copying $rebos_portage_path/$folder/ /etc/portage/$folder/"
+    if [ $debug -ge 2 ]; then
+      sudo cp -rv "$rebos_portage_path/$folder" "/etc/portage/"
+    else
+      sudo cp -r "$rebos_portage_path/$folder" "/etc/portage/"
+    fi
+  fi
+done
+[ $debug -ge 1 ] && echo -e "\033[0;90m[\033[1;94mDebug\033[0;90m] :\033[0m Portage configs copied over successfully"

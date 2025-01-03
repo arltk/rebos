@@ -1,0 +1,50 @@
+#!/usr/bin/bash
+
+# Variables
+debug=2
+rebos_path="$HOME/.config/rebos"
+rebos_system_files_path="$rebos_path/system_files"
+rebos_dotfiles_path="$rebos_system_files_path/dotfiles"
+rebos_gitconfig_path="$rebos_dotfiles_path/gitconfig.conf"
+rebos_sysconfigs_path="$rebos_system_files_path/sys-configs"
+
+# Add user to seat and video groups
+echo -e "\033[0;90m[\033[1;92mInfo\033[0;90m] :\033[0m Adding $USER to necessary groups"
+
+#TODO:
+# Refactor to use custom $groups variable and account for multiple groups
+[ $debug -ge 1 ] && echo -e "\033[0;90m[\033[1;94mDebug\033[0;90m] :\033[0m Adding $USER to groups"
+sudo usermod -aG seat,video $USER
+
+# Add git integration into FZF
+echo -e "\033[0;90m[\033[1;92mInfo\033[0;90m] :\033[0m Configuring fzf"
+if [ $debug -ge 1 ]; then  
+  echo -e "\033[0;90m[\033[1;94mDebug\033[0;90m] :\033[0m Downloading git info"
+  git clone https://github.com/junegunn/fzf-git.sh.git $HOME/fzf-git.sh || exit 1
+else 
+  git clone https://github.com/junegunn/fzf-git.sh.git $HOME/fzf-git.sh > /dev/null || exit 1 # Disable stdout
+fi
+
+# Configure bat
+echo -e "\033[0;90m[\033[1;92mInfo\033[0;90m] :\033[0m Configuring bat"
+[ $debug -ge 1 ] && echo -e "\033[0;90m[\033[1;92mInfo\033[0;90m] :\033[0m Creating $(bat --config-dir)/themes if it does not already exist"
+[ -d "$(bat --config-dir)/themes" ] || mkdir -p "$(bat --config-dir)/themes" || exit 1
+[ $debug -ge 1 ] && echo -e "\033[0;90m[\033[1;92mInfo\033[0;90m] :\033[0m Downloading bat theme"
+pushd "$(bat --config-dir)/themes"
+if [ $debug -ge 2 ]; then
+  curl -O "https://raw.githubusercontent.com/folke/tokyonight.nvim/main/extras/sublime/tokyonight_night.tmTheme"
+else
+  curl -O "https://raw.githubusercontent.com/folke/tokyonight.nvim/main/extras/sublime/tokyonight_night.tmTheme" > /dev/null
+fi
+popd
+[ $debug -ge 1 ] && echo -e "\033[0;90m[\033[1;92mInfo\033[0;90m] :\033[0m Building bat cache"
+bat cache --build || exit 1
+
+# Copy SDDM configs
+echo -e "\033[0;90m[\033[1;92mInfo\033[0;90m] :\033[0m Copying SDDM configs"
+[ $debug -ge 1 ] && echo -e "\033[0;90m[\033[1;92mInfo\033[0;90m] :\033[0m Copying $rebos_sysconfigs_path/sddm.conf -> /etc/sddm.conf.d/01gentoo.conf"
+if [ $debug -ge 2 ]; then
+  sudo cp -v "$rebos_sysconfigs_path/sddm.conf" "/etc/sddm.conf.d/01gentoo.conf" || exit 1
+else 
+  sudo cp "$rebos_sysconfigs_path/sddm.conf" "/etc/sddm.conf.d/01gentoo.conf" || exit 1
+fi

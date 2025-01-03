@@ -1,0 +1,9 @@
+add = "time sudo emerge -avuDN #:?" # Example: sudo apt install #:?
+remove = "time sudo emerge -cav #:?" # Example: sudo apt remove #:?
+
+plural_name = "init packages"
+
+hook_name = "init" # This is used in hooks. (Example: post_system_packages_add)
+
+[config]
+many_args = true

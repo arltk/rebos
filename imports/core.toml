@@ -64,6 +64,7 @@ items = [
   "app-shells/zsh", # Improvement on BASH, requires a .zshrc file
   "app-shells/zsh-completions", # Auto-completions for ZSH
   "dev-util/git-delta", # Allows for better Git differences
+  "media-video/ffmpeg", # Utility for manipulating audio/video
   "net-analyzer/nmap", # Useful for scanning networks
   "net-misc/yt-dlp", # YouTube video downloader
   "sys-apps/bat", # Better version of cat. Cat is still useful, so do not alias. Requiers additional configurations

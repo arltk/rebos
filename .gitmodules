@@ -1,3 +1,0 @@
-[submodule "system_files/dotfiles"]
-	path = system_files/dotfiles
-	url = git@github.com:arltk/dotfiles

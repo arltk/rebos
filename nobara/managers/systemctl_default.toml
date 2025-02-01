@@ -1,0 +1,9 @@
+add = "sudo systemctl enable --now #:?"
+remove = "sudo systemctl enable --now #:?"
+
+plural_name = "systemctl default"
+
+hook_name = "systemctl_default"
+
+[config]
+many_args = false

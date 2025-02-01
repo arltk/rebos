@@ -1,0 +1,11 @@
+begin = [
+	"init",
+	"system",
+  "pipx",
+  "flatpak",
+  "cargo",
+]
+
+end = [
+  "systemctl_default",
+]

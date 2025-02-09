@@ -6,7 +6,7 @@ debug=1
 # Configure GURU
 echo -e "\033[0;90m[\033[1;92mInfo\033[0;90m] :\033[0m Configuring additional repositories"
 [ $debug -ge 1 ] && echo -e "\033[0;90m[\033[1;94mDebug\033[0;90m] :\033[0m Enabling solopasha/hyprland repository"
-sudo dnf copr enable solopasha/hyprland
+yes "" | sudo dnf copr enable solopasha/hyprland
 
 # Configure flatpak
 echo -e "\033[0;90m[\033[1;92mInfo\033[0;90m] :\033[0m Configuring Flatpak"

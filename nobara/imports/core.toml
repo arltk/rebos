@@ -13,7 +13,7 @@ items = [
 # Core Utilities
   "stow", # Essential for managing dotfiles, requires additional configs (pulling git repo & other shit)
   "fastfetch", # Displays information about the current system
-  #"nerdfetch", # Displays less information than fastfetch, but in cool fonts (requires nerdfonts). Requires GURU repository
+  "nerdfetch", # Displays less information than fastfetch, but in cool fonts (requires nerdfonts). Requires GURU repository
   "tmux", # Terminal multiplexer (better than screen)
   "tree", # Displays files in a tree
   "git", # Version manager, very essential #TODO: Redo description, version manager is not the right word
@@ -44,7 +44,6 @@ items = [
   "nano", # Backup to NVIM
   "neovim", # Main text editor/IDE, configurations on github
   "vim", # Backup to NVIM
-  "nerd-fonts", # Adds new fonts (specified in use flags) and symbols
 
 # Fonts
   "google-noto-fonts-all", # Noto fonts

@@ -10,11 +10,21 @@ rebos_sysconfigs_path="$rebos_system_files_path/sys-configs"
 
 # Add git integration into FZF
 echo -e "\033[0;90m[\033[1;92mInfo\033[0;90m] :\033[0m Configuring fzf"
-if [ $debug -ge 1 ]; then  
-  echo -e "\033[0;90m[\033[1;94mDebug\033[0;90m] :\033[0m Downloading git info"
-  git clone https://github.com/junegunn/fzf-git.sh.git $HOME/fzf-git.sh || exit 1
-else 
-  git clone https://github.com/junegunn/fzf-git.sh.git $HOME/fzf-git.sh > /dev/null || exit 1 # Disable stdout
+[ $debug -ge 2 ] && echo -e "\033[0;90m[\033[1;94mDebug\033[0;90m] :\033[0m Checking to see if plugin is downloaded"
+if [ -d "$HOME/fzf-git.sh" ]; then
+  [ $debug -ge 2 ] && echo -e "\033[0;90m[\033[1;94mDebug\033[0;90m] :\033[0m Plugin is already downloaded" 
+  [ $debug -ge 1 ] && echo -e "\033[0;90m[\033[1;94mDebug\033[0;90m] :\033[0m Pulling latest git commit"
+  pushd "$HOME/fzf-git.sh"
+  git pull
+  popd
+else
+  [ $debug -ge 2 ] && echo -e "\033[0;90m[\033[1;94mDebug\033[0;90m] :\033[0m Plugin is not downloaded"
+  [ $debug -ge 1 ] && echo -e "\033[0;90m[\033[1;94mDebug\033[0;90m] :\033[0m Downloading plugin"
+  if [ $debug -ge 1 ]; then  
+    git clone https://github.com/junegunn/fzf-git.sh.git $HOME/fzf-git.sh || exit 1
+  else 
+    git clone https://github.com/junegunn/fzf-git.sh.git $HOME/fzf-git.sh > /dev/null || exit 1 # Disable stdout
+  fi
 fi
 
 # Configure bat
@@ -31,3 +41,16 @@ fi
 popd
 [ $debug -ge 1 ] && echo -e "\033[0;90m[\033[1;92mInfo\033[0;90m] :\033[0m Building bat cache"
 bat cache --build || exit 1
+
+# Configure nerd-fonts
+echo -e "\033[0;90m[\033[1;92mInfo\033[0;90m] :\033[0m Configuring Nerd Fonts"
+[ $debug -ge 1 ] && echo -e "\033[0;90m[\033[1;92mInfo\033[0;90m] :\033[0m Cloning git repository"
+if [ $debug -ge 1 ]; then
+  git clone https://github.com/ryanoasis/nerd-fonts.git /tmp/nerd-fonts || exit 1
+else
+  git clone https://github.com/ryanoasis/nerd-fonts.git /tmp/nerd-fonts > /dev/null || exit 1
+fi
+pushd /tmp/nerd-fonts
+[ $debug -ge 1 ] && echo -e "\033[0;90m[\033[1;92mInfo\033[0;90m] :\033[0m Running nerd-fonts install script"
+[ $debug -ge 2 ] && echo -e "\033[0;90m[\033[1;92mInfo\033[0;90m] :\033[0m Installing UbuntuSans"
+./install.sh UbuntuSans

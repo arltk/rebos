@@ -8,31 +8,31 @@ items = [
 items = [
 # System Utilities
   "cifs-utils", # Enable SMB shares
+  "pinentry-curses", # Useful utility, required for GPG stuff
   "pinentry-tty", # Useful utility, required for GPG stuff
 
 # Core Utilities
-  "stow", # Essential for managing dotfiles, requires additional configs (pulling git repo & other shit)
+  "btop", # Shows process information
   "fastfetch", # Displays information about the current system
-  "nerdfetch", # Displays less information than fastfetch, but in cool fonts (requires nerdfonts). Requires GURU repository
+  "git", # Version manager, very essential #TODO: Redo description, version manager is not the right word
+  "htop", # Shows process information
+  "hwdata", # Provides useful hardware data
+  "stow", # Essential for managing dotfiles, requires additional configs (pulling git repo & other shit)
   "tmux", # Terminal multiplexer (better than screen)
   "tree", # Displays files in a tree
-  "git", # Version manager, very essential #TODO: Redo description, version manager is not the right word
-  "hwdata", # Provides useful hardware data
   "pciutils", # Provides useful PCI data
-  "btop", # Shows process information
-  "htop", # Shows process information
 
 # Extended Utilities
-  "fzf", # Terminal fuzzy finder, requires additional configurations
-  "zoxide", # Better version of cd, requires additional configurations
-  "zsh", # Improvement on BASH, requires a .zshrc file
-  "git-delta", # Allows for better Git differences
-  "ffmpeg-free", # Utility for manipulating audio/video
-  "nmap", # Useful for scanning networks
-  "yt-dlp", # YouTube video downloader
   "bat", # Better version of cat. Cat is still useful, so do not alias. Requiers additional configurations
   "eza", # Better version of ls. Requires additional configurations
   "fd", # Better version of find #TODO: Redo descrption
+  "ffmpeg-free", # Utility for manipulating audio/video
+  "fzf", # Terminal fuzzy finder, requires additional configurations
+  "git-delta", # Allows for better Git differences
+  "nmap", # Useful for scanning networks
+  "yt-dlp", # YouTube video downloader
+  "zoxide", # Better version of cd, requires additional configurations
+  "zsh", # Improvement on BASH, requires a .zshrc file
 
 # Password Manager
   "pass", # Password manager

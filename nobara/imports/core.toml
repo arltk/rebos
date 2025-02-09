@@ -62,16 +62,10 @@ items = [
     "yazi-fm",
   ]
 
-  [managers.openrc_default]
+  [managers.systemctl_default]
   items = [
     "chronyd",
     "cronie",
     "NetworkManager",
     "sshd",
-  ]
-
-  [managers.openrc_boot]
-  items = [
-    "elogind",
-    "syslog-ng",
   ]

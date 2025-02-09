@@ -19,8 +19,3 @@ items = [
   "hyprpolkitagent", # Polkit authentication daemon
 	"kitty", # Terminal Emulator
 ]
-
-[managers.openrc_default]
-items = [
-  #"display-manager", # For sddm, requires additional configs
-]

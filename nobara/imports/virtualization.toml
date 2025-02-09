@@ -1,8 +1,6 @@
 [managers.system]
 items = [
-  "app-emulation/libvirt",
-  "app-emulation/qemu", # Allows for QEMU emulation
-  "app-emulation/virt-manager", # GUI manager for machine emulation
+  "@virtualization", # Install virtualization group packages for virt-manager
 ]
 
 [managers.openrc_default]

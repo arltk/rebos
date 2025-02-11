@@ -1,0 +1,25 @@
+#!/usr/bin/bash
+
+# Variables
+debug=2
+
+# Manually compile swww
+echo -e "\033[0;90m[\033[1;92mInfo\033[0;90m] :\033[0m Installing SWWW"
+[ $debug -ge 2 ] && echo -e "\033[0;90m[\033[1;94mDebug\033[0;90m] :\033[0m Checking to see if /tmp/swww exists"
+if [ -d "/tmp/swww" ]; then
+  [ $debug -ge 2 ] && echo -e "\033[0;90m[\033[1;94mDebug\033[0;90m] :\033[0m /tmp/swww exists"
+  [ $debug -ge 2 ] && echo -e "\033[0;90m[\033[1;94mDebug\033[0;90m] :\033[0m Removing /tmp/swww"
+  sudo rm -rf /tmp/swww
+else
+  [ $debug -ge 2 ] && echo -e "\033[0;90m[\033[1;94mDebug\033[0;90m] :\033[0m /tmp/swww does not exist"
+fi
+[ $debug -ge 1 ] && echo -e "\033[0;90m[\033[1;94mDebug\033[0;90m] :\033[0m Cloning SWWW git repository"
+if [ $debug -ge 2 ]; then  
+  git clone https://github.com/LGFae/swww.git /tmp/swww || exit 1
+else 
+  git clone https://github.com/LGFae/swww.git /tmp/swww > /dev/null || exit 1 # Disable stdout
+fi
+pushd /tmp/swww
+cargo build --release || exit 1
+popd
+#TODO: put binaries in path

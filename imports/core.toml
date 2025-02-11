@@ -14,6 +14,7 @@ items = [
 
 # Core Utilities
   "btop", # Shows process information
+  "cronie", # Crontab daemon
   "fastfetch", # Displays information about the current system
   "git", # Version manager, very essential #TODO: Redo description, version manager is not the right word
   "htop", # Shows process information

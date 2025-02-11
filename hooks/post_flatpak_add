@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# Variables
+debug=2
+
+# Install Sober (Roblox Client)
+echo -e "\033[0;90m[\033[1;92mInfo\033[0;90m] :\033[0m Installing Sober"
+flatpak install --user https://sober.vinegarhq.org/sober.flatpakrepo 2> /dev/null

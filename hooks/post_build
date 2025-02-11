@@ -14,9 +14,9 @@ if [ -d "$HOME/dotfiles" ]; then
 else
   [ $debug -ge 1 ] && echo -e "\033[0;90m[\033[1;92mInfo\033[0;90m] :\033[0m $HOME/dotfiles does not exist. Attempting to pull latest git commit"
   if [ $debug -ge 2 ]; then
-    git clone https://github.com/arltk/dotfiles --recurse $HOME/dotfiles || exit 1
+    git clone https://github.com/arltk/dotfiles --recurse $HOME/dotfiles
   else
-    git clone https://github.com/arltk/dotfiles --recurse $HOME/dotfiles > /dev/null || exit 1
+    git clone https://github.com/arltk/dotfiles --recurse $HOME/dotfiles > /dev/null
   fi
 fi
 [ $debug -ge 2 ] && echo -e "\033[0;90m[\033[1;92mInfo\033[0;90m] :\033[0m Checking to see if app-admin/stow is installed"

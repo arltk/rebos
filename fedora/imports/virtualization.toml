@@ -1,0 +1,16 @@
+[managers.system]
+items = [
+  "docker-ce", # Docker community edition
+  "docker-ce-cli", # Docker command-line utilities
+  "containerd.io", #TODO: not sure
+  "docker-buildx-plugin", #TODO: Not sure
+  "docker-compose-plugin", # Docker compose 
+  "@container-management", # Enables Podman
+  "@virtualization", # Install virtualization group packages for virt-manager
+]
+
+[managers.openrc_default]
+items = [
+  "docker", 
+  "libvirtd",
+]

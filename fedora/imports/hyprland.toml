@@ -1,0 +1,21 @@
+[managers.system]
+items = [
+  # Window Manager
+	"hyprland", # Main Window Manager
+
+	# Window Manager Essentials
+  "flameshot", # Screenshot daemon #TODO: Investigate hyprshot?
+  "hyprcursor", # New cursor theme
+	"hypridle", # Idle daemon, useful for auto-locking the screen & etc
+	"hyprlock", # Screen lock for Hyprland
+	"hyprpicker", # Utility to pick colors from the Hyprland screen
+  #"hyprshot", # Screenshot tool for Hyprland #TODO: Investigate flameshot
+  "rofi-wayland", # App launcher
+  "waybar", # Status bar
+	"xdg-desktop-portal-hyprland", # Handles a lot of Hyprland additions, e.g. file-picking & screen-sharing
+  #"hyprpolkitagent", # Polkit authentication daemon
+
+  # Dependencies
+  "mate-polkit", # Polkit agent
+  "rust-lz4-devel", # Required by swww build
+]

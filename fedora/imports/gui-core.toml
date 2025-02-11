@@ -1,7 +1,19 @@
 [managers.system]
 items = [
+  # Core
+  #"sddm", # Login manager, turned off for kde-plasma's manager
+
+  # Basic utilities
   "firefox", # Web browser, requires configs or sync
+	"kitty", # Terminal Emulator
+  "pcmanfm", # File manager
   "remmina", # RDP & remote-access client
+  "vlc", # Media player
+  "@libreoffice", # Office suite
+
+  # Gaming
+  "lutris", # Lutris
+  #"steam", # Steam
 ]
 
 [managers.flatpak]
@@ -9,7 +21,10 @@ items = [
   # Standard packages
   "com.dec05eba.gpu_screen_recorder", # NVIDIA Shadowplay clone
   "com.discordapp.Discord", # Discord client
+  "com.heroicgameslauncher.hgl", # Open-source Epic Games launcher
   "com.protonvpn.www", # ProtonVPN client
+  "com.valvesoftware.Steam", # Steam client
+
   #"me.proton.Mail", # ProtonMail client, might want to forego this in favor of using the web browser
 
   # Direct links

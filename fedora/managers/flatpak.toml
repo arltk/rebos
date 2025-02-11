@@ -1,6 +1,6 @@
 # Flatpak
 
-add = "flatpak install --user #:?"
+add = "yes "" | flatpak install --user #:?"
 remove = "flatpak uninstall --user #:?"
 upgrade = "flatpak upgrade --user"
 
@@ -9,4 +9,4 @@ plural_name = "flatpak"
 hook_name = "flatpak"
 
 [config]
-many_args = true
+many_args = false

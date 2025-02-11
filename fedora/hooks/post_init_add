@@ -16,3 +16,11 @@ if [ $debug -ge 1 ]; then
 else 
   flatpak remote-add --user --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo > /dev/null || exit 1
 fi
+
+# Configure RPM non-free repositories
+echo -e "\033[0;90m[\033[1;92mInfo\033[0;90m] :\033[0m Configuring non-free repositories"
+sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -y   || exit 1
+
+# Configure Docker repository
+echo -e "\033[0;90m[\033[1;92mInfo\033[0;90m] :\033[0m Configuring Docker repository"
+sudo dnf-3 config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo || exit 1

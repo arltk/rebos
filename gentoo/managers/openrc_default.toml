@@ -1,9 +1,0 @@
-add = "sudo rc-service #:? start && sudo rc-update add #:? default"
-remove = "sudo rc-service #:? stop && sudo rc-update del #:? default"
-
-plural_name = "openrc service (default)"
-
-hook_name = "openrc_default"
-
-[config]
-many_args = false

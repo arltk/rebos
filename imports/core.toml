@@ -36,6 +36,10 @@ items = [
   "zoxide", # Better version of cd, requires additional configurations
   "zsh", # Improvement on BASH, requires a .zshrc file
 
+# Development Tools
+  "ansible", # Ansible playbooks
+  "opentofu", # Opentofu
+
 # Password Manager
   "pass", # Password manager
   "pass-otp", # Allows for OTP with password manager
@@ -66,8 +70,6 @@ items = [
 
   [managers.systemctl_default]
   items = [
-    "chronyd",
-    "cronie",
     "NetworkManager",
     "sshd",
   ]

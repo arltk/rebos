@@ -24,5 +24,6 @@ items = [
   "com.heroicgameslauncher.hgl", # Open-source Epic Games launcher
   "com.protonvpn.www", # ProtonVPN client
   "com.valvesoftware.Steam", # Steam client
+  "org.torproject.torbrowser-launcher"
   #"me.proton.Mail", # ProtonMail client, might want to forego this in favor of using the web browser
 ]

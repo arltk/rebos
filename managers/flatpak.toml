@@ -1,8 +1,8 @@
 # Flatpak
 
-add = "flatpak install --user #:?"
-remove = "flatpak uninstall --user #:?"
-upgrade = "flatpak upgrade --user"
+add = "flatpak install --user --assumeyes #:?"
+remove = "flatpak uninstall --user --assumeyes #:?"
+upgrade = "flatpak upgrade --user --assumeyes" 
 
 plural_name = "flatpak"
 

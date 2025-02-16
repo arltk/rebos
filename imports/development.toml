@@ -8,5 +8,5 @@ items = [
   # "app-containers/podman", # Containerization software
   # "app-containers/podman-compose", # Run docker-compose using Podman
   # "app-containers/podman-tui", # Terminal user interface for Podman
-  "@container management", # Containerization software
+  "@container-management", # Containerization software
 ]

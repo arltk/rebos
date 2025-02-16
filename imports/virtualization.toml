@@ -9,7 +9,7 @@ items = [
   "@virtualization", # Install virtualization group packages for virt-manager
 ]
 
-[managers.openrc_default]
+[managers.systemctl_default]
 items = [
   "docker", 
   "libvirtd",

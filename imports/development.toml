@@ -1,0 +1,12 @@
+[managers.system]
+items = [
+  "app-admin/ansible", # Infrastructure as Code software
+  "app-admin/opentofu", # Terraform fork
+  "app-admin/terraform", # Infrastructure as Code software
+  "app-containers/docker", # Containerization software
+  "app-containers/docker-compose", # Contaiers as Code service for Docker
+  "app-containers/docker-swarm", # Cluster Docker containers
+  "app-containers/podman", # Containerization software
+  "app-containers/podman-compose", # Run docker-compose using Podman
+  "app-containers/podman-tui", # Terminal user interface for Podman
+]

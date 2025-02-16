@@ -104,8 +104,16 @@ items = [
     "rebos",
 
 # Extended Utilities
-    "tlrc", # tldr but rust
-    "yazi-fm",
+    "cargo-expand", # Wrapper around rustc -Zunpretty=expanded. Shows the result of macro expansion and #[derive] expansion
+    "cargo-info", # Extends cargo to query crates.io registry for crates details
+    "cargo-update", # A cargo subcommand for checking and applying updates to installed executables
+    "cermic", # Print .png images in your terminal as ascii art
+    "shabi", # (S)imple (H)ex (A)nd (B)inary (I)nspector - CLI Tool
+    "tlrc", # Tldr but rust
+    "ttyper", # Terminal-based typing test
+    "tui48", # An elegant and faithful 2048 clone in the terminal
+    "tuido", # Terminal-basd to-do list
+    "yazi-fm", # Terminal file manager
   ]
 
   [managers.openrc_default]

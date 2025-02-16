@@ -1,9 +1,0 @@
-add = "sudo dnf install -y #:?" # Example: sudo apt install #:?
-remove = "sudo dnf remove -y #:?" # Example: sudo apt remove #:?
-
-plural_name = "init packages"
-
-hook_name = "init" # This is used in hooks. (Example: post_system_packages_add)
-
-[config]
-many_args = true

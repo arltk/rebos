@@ -1,9 +1,0 @@
-[managers.system]
-items = [
-  "@virtualization", # Install virtualization group packages for virt-manager
-]
-
-[managers.openrc_default]
-items = [
-  "libvirtd",
-]

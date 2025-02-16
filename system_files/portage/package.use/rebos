@@ -10,6 +10,8 @@ media-gfx/qrencode png # Required for app-admin/pass
 
 media-fonts/nerdfonts nerdfontssymbolsonly ubuntusans # Required for emerge
 
+app-crypt/gnupg usb # Enable USB support for smart cards
+
 ### HYPRLAND
 */* wayland X # Add support for both wayland (main compositor) and X (for X-only apps)
 */* opengl vulkan # Add 3D graphics support

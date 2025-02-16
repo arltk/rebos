@@ -121,6 +121,7 @@ items = [
     "chronyd",
     "cronie",
     "NetworkManager",
+    "pcscd",
     "sshd",
   ]
 

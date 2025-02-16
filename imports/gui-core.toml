@@ -7,7 +7,9 @@ items = [
   "firefox", # Web browser, requires configs or sync
 	"kitty", # Terminal Emulator
   "pcmanfm", # File manager
+  "plasma-desktop", # Fallback desktop environment
   "remmina", # RDP & remote-access client
+  "sddm", # Login manager
   "vlc", # Media player
   "@libreoffice", # Office suite
 

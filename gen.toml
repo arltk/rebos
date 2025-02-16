@@ -7,8 +7,8 @@ imports = [
 	"core",
 	"hyprland",
   "gui-core",
-  #"virtualization",
-    # "intensive_apps",
+  "virtualization",
+  "development",
 ]
 
 # Packages to be installed via the native package manager.

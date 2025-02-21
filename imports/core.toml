@@ -20,6 +20,7 @@ items = [
   "htop", # Shows process information
   "hwdata", # Provides useful hardware data
   "openssl", # Certificates & encryption tool
+  "rsync", # Useful file copy utility
   "stow", # Essential for managing dotfiles, requires additional configs (pulling git repo & other shit)
   "tmux", # Terminal multiplexer (better than screen)
   "tree", # Displays files in a tree
@@ -60,9 +61,11 @@ items = [
 
 # Various misc dependencies
   "clang", # Termova dependency
+  "gcc", # General cargo dependency
   "libavutil-free-devel", # Termova dependency
   "libavformat-free-devel", # Termova dependency
   "libavdevice-free-devel", # Termova dependency
+  "liblz4-devel", # General cargo dependency
   "openssl-devel", # Termova dependency
 ]
 

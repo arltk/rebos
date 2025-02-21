@@ -23,8 +23,8 @@ sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-releas
 
 # Configure Docker repository
 echo -e "\033[0;90m[\033[1;92mInfo\033[0;90m] :\033[0m Configuring Docker repository"
-sudo dnf config-manager add-repo --from-repofile=https://download.docker.com/linux/fedora/docker-ce.repo || exit 1
+sudo dnf config-manager addrepo --overwrite --from-repofile=https://download.docker.com/linux/fedora/docker-ce.repo || exit 1
 
 # Configure Terraform repository
 echo -e "\033[0;90m[\033[1;92mInfo\033[0;90m] :\033[0m Configuring Terraform repository"
-sudo dnf config-manager addrepo --from-repofile=https://rpm.releases.hashicorp.com/fedora/hashicorp.repo || exit 1
+sudo dnf config-manager addrepo --overwrite --from-repofile=https://rpm.releases.hashicorp.com/fedora/hashicorp.repo || exit 1

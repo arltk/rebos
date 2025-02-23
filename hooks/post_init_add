@@ -1,30 +1,43 @@
 #!/usr/bin/bash
 
 # Variables
-debug=1
+debug=2
 
 # Configure GURU
 echo -e "\033[0;90m[\033[1;92mInfo\033[0;90m] :\033[0m Configuring additional repositories"
 [ $debug -ge 1 ] && echo -e "\033[0;90m[\033[1;94mDebug\033[0;90m] :\033[0m Enabling solopasha/hyprland repository"
 yes "" | sudo dnf copr enable solopasha/hyprland
 
-# Configure flatpak
-echo -e "\033[0;90m[\033[1;92mInfo\033[0;90m] :\033[0m Configuring Flatpak"
-if [ $debug -ge 1 ]; then
-  echo -e "\033[0;90m[\033[1;94mDebug\033[0;90m] :\033[0m Enable Flathub for Flatpaks"
-  flatpak remote-add --user --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo || exit 1
-else 
-  flatpak remote-add --user --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo > /dev/null || exit 1
-fi
-
 # Configure RPM non-free repositories
 echo -e "\033[0;90m[\033[1;92mInfo\033[0;90m] :\033[0m Configuring non-free repositories"
-sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -y   || exit 1
+sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -y || exit 1
 
 # Configure Docker repository
 echo -e "\033[0;90m[\033[1;92mInfo\033[0;90m] :\033[0m Configuring Docker repository"
 sudo dnf config-manager addrepo --overwrite --from-repofile=https://download.docker.com/linux/fedora/docker-ce.repo || exit 1
 
-# Configure Terraform repository
+# Configure Hashicorp repository (terraform/packer)
 echo -e "\033[0;90m[\033[1;92mInfo\033[0;90m] :\033[0m Configuring Terraform repository"
 sudo dnf config-manager addrepo --overwrite --from-repofile=https://rpm.releases.hashicorp.com/fedora/hashicorp.repo || exit 1
+
+# Install Rust via Rustup (if it's not already installed, and if it is, update it)
+[ $debug -ge 1 ] && echo -e "\033[0;90m[\033[1;94mDebug\033[0;90m] :\033[0m Checking to see if Rust is installed"
+if [ $(command -v "rustup") ]; then
+  echo -e "\033[0;90m[\033[1;92mInfo\033[0;90m] :\033[0m Updating Rust"
+  rustup update || exit 1
+else
+  echo -e "\033[0;90m[\033[1;92mInfo\033[0;90m] :\033[0m Installing Rust"
+  if [ $debug -ge 2 ]; then
+    curl -fsSL https://sh.rustup.rs | sh -s - -y || exit 1
+  else
+    curl -fsSL https://sh.rustup.rs | sh -s - -y > /dev/null || exit 1
+  fi
+fi
+[ $debug -ge 1 ] && echo -e "\033[0;90m[\033[1;94mDebug\033[0;90m] :\033[0m Checking to see if Rust is in \$PATH"
+if [ $(command -v "cargo") ]; then
+  [ $debug -ge 1 ] && echo -e "\033[0;90m[\033[1;94mDebug\033[0;90m] :\033[0m Rust is in \$PATH"
+else
+  [ $debug -ge 1 ] && echo -e "\033[0;90m[\033[1;94mDebug\033[0;90m] :\033[0m Rust is not in \$PATH"
+  [ $debug -ge 1 ] && echo -e "\033[0;90m[\033[1;94mDebug\033[0;90m] :\033[0m Putting Rust in \$PATH"
+  export PATH="$PATH:$HOME/.cargo/bin"
+fi

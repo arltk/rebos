@@ -31,13 +31,13 @@ else
 fi
 popd
 
-# Change default shell to zsh
-[ $debug -ge 1 ] && echo -e "\033[0;90m[\033[1;94mDebug\033[0;90m] :\033[0m Checking to see if ZSH is installed"
-if [ $(command -v zsh) ]; then
-  [ $debug -ge 1 ] && echo -e "\033[0;90m[\033[1;94mDebug\033[0;90m] :\033[0m ZSH is installed"
-  echo -e "\033[0;90m[\033[1;92mInfo\033[0;90m] :\033[0m Upgrading shell to ZSH"
-  [ $debug -ge 1 ] && echo -e "\033[0;90m[\033[1;94mDebug\033[0;90m] :\033[0m Changing shell to ZSH"
-  chsh --shell "$(which zsh)" || exit 1
-else
-  [ $debug -ge 1 ] && echo -e "\033[0;90m[\033[1;94mDebug\033[0;90m] :\033[0m ZSH is not installed"
-fi
+# # Change default shell to zsh
+# [ $debug -ge 1 ] && echo -e "\033[0;90m[\033[1;94mDebug\033[0;90m] :\033[0m Checking to see if ZSH is installed"
+# if [ $(command -v zsh) ]; then
+#   [ $debug -ge 1 ] && echo -e "\033[0;90m[\033[1;94mDebug\033[0;90m] :\033[0m ZSH is installed"
+#   echo -e "\033[0;90m[\033[1;92mInfo\033[0;90m] :\033[0m Upgrading shell to ZSH"
+#   [ $debug -ge 1 ] && echo -e "\033[0;90m[\033[1;94mDebug\033[0;90m] :\033[0m Changing shell to ZSH"
+#   chsh --shell "$(which zsh)" || exit 1
+# else
+#   [ $debug -ge 1 ] && echo -e "\033[0;90m[\033[1;94mDebug\033[0;90m] :\033[0m ZSH is not installed"
+# fi

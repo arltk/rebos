@@ -1,8 +1,6 @@
 [managers.init]
 items = [
   "dnf-plugins-core", # Required for docker
-  "flatpak", # Flatpak
-  "rust", # RUST language (enables crate support)
 ]
 
 [managers.system]
@@ -20,11 +18,11 @@ items = [
   "htop", # Shows process information
   "hwdata", # Provides useful hardware data
   "openssl", # Certificates & encryption tool
+  "pciutils", # Provides useful PCI data
   "rsync", # Useful file copy utility
   "stow", # Essential for managing dotfiles, requires additional configs (pulling git repo & other shit)
   "tmux", # Terminal multiplexer (better than screen)
   "tree", # Displays files in a tree
-  "pciutils", # Provides useful PCI data
 
 # Extended Utilities
   "bat", # Better version of cat. Cat is still useful, so do not alias. Requiers additional configurations
@@ -38,10 +36,6 @@ items = [
   "zoxide", # Better version of cd, requires additional configurations
   "zsh", # Improvement on BASH, requires a .zshrc file
 
-# Development Tools
-  "ansible", # Ansible playbooks
-  "opentofu", # Opentofu
-
 # Password Manager
   "pass", # Password manager
   "pass-otp", # Allows for OTP with password manager
@@ -53,9 +47,6 @@ items = [
   "neovim", # Main text editor/IDE, configurations on github
   "vim", # Backup to NVIM
 
-# Fonts
-  "google-noto-fonts-all", # Noto fonts
-
 # Terminal Web Browser
   "links", # Web browser within the terminal, useful for crawling thru download pages, also as a backup
 
@@ -65,7 +56,7 @@ items = [
   "libavutil-free-devel", # Termova dependency
   "libavformat-free-devel", # Termova dependency
   "libavdevice-free-devel", # Termova dependency
-  "liblz4-devel", # General cargo dependency
+  "lz4-devel", # General cargo dependency
   "openssl-devel", # Termova dependency
 ]
 

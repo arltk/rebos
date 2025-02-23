@@ -1,4 +1,4 @@
-add = "sudo dnf install -y #:?" # Example: sudo apt install #:?
+add = "sudo dnf install --refresh -y #:?" # Example: sudo apt install #:?
 remove = "sudo dnf remove -y #:?" # Example: sudo apt remove #:?
 
 plural_name = "init packages"

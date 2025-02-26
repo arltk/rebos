@@ -21,5 +21,7 @@ else
 fi
 pushd /tmp/swww
 cargo build --release || exit 1
+sudo mv target/release/swww /usr/local/bin || exit 1
+sudo mv target/release/swww-daemon /usr/local/bin || exit 1
 popd
 #TODO: put binaries in path

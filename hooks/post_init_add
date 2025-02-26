@@ -23,11 +23,11 @@ sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-releas
 
 # Configure Docker repository
 echo -e "\033[0;90m[\033[1;92mInfo\033[0;90m] :\033[0m Configuring Docker repository"
-sudo dnf config-manager addrepo --repofile=https://download.docker.com/linux/fedora/docker-ce.repo || exit 1
+sudo dnf config-manager addrepo --from-repofile=https://download.docker.com/linux/fedora/docker-ce.repo || exit 1
 
 # Configure Hashicorp repository
 echo -e "\033[0;90m[\033[1;92mInfo\033[0;90m] :\033[0m Configuring Hashicorp repository"
-sudo dnf config-manager addrepo --repofile=https://rpm.releases.hashicorp.com/fedora/hashicorp.repo || exit 1
+sudo dnf config-manager addrepo --from-repofile=https://rpm.releases.hashicorp.com/fedora/hashicorp.repo || exit 1
 
 # Enable hyprland repository
 yes "" | sudo dnf copr enable solopasha/hyprland || exit 1

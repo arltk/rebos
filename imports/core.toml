@@ -2,7 +2,6 @@
 items = [
   "dnf-plugins-core", # Required for docker
   "flatpak", # Flatpak
-  "rust", # RUST language (enables crate support)
 ]
 
 [managers.system]

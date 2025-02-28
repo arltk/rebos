@@ -1,10 +1,9 @@
 [managers.system]
 items = [
   # Core
-  #"sddm", # Login manager, turned off for kde-plasma's manager
+  "sddm", # Login manager, turned off for kde-plasma's manager
 
   # Basic utilities
-  "firefox", # Web browser, requires configs or sync
 	"kitty", # Terminal Emulator
   "pcmanfm", # File manager
   "plasma-desktop", # Fallback desktop environment
@@ -26,6 +25,7 @@ items = [
   "com.heroicgameslauncher.hgl", # Open-source Epic Games launcher
   "com.protonvpn.www", # ProtonVPN client
   "com.valvesoftware.Steam", # Steam client
-  "org.torproject.torbrowser-launcher"
+  "org.torproject.torbrowser-launcher", # Tor browser
+  "one.ablaze.floorp", # Floorp browser (replacement for firefox)
   #"me.proton.Mail", # ProtonMail client, might want to forego this in favor of using the web browser
 ]

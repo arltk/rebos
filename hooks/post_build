@@ -5,7 +5,40 @@ debug=2
 rebos_path="$HOME/.config/rebos"
 rebos_system_files="$rebos_path/system_files"
 rebos_zshrc="$rebos_system_files/zshrc.sh"
-#
+
+# Launch GPG configurations (if username is arltk)
+[ $debug -ge 1 ] && echo -e "\033[0;90m[\033[1;92mInfo\033[0;90m] :\033[0m Checking to see if username is 'arltk'"
+if [ $USER -eq "arltk" ]; then
+  [ $debug -ge 1 ] && echo -e "\033[0;90m[\033[1;92mInfo\033[0;90m] :\033[0m Username is 'arltk'"
+  echo -e "\033[0;90m[\033[1;92mInfo\033[0;90m] :\033[0m Configuring GPG keys"
+  [ $debug -ge 2 ] && echo -e "\033[0;90m[\033[1;92mInfo\033[0;90m] :\033[0m Creating GPG files"
+  if [ $debug -ge 2 ]; then
+    gpg -k || exit 1
+  else
+    gpg -k > /dev/null 2&>1 || exit 1
+  fi
+  [ $debug -ge 1 ] && echo -e "\033[0;90m[\033[1;92mInfo\033[0;90m] :\033[0m Configuring sshcontrol"
+  if [ $(grep -e 'FD68A5F1A57E7259CB3CE79B619B25298A73EF66' ~/.gnupg/sshcontrol)]
+    [ $debug -ge 1 ] && echo -e "\033[0;90m[\033[1;92mInfo\033[0;90m] :\033[0m Putting GPG keygrip into sshcontrol"
+    if [ $debug -ge 2 ]; then
+      echo "FD68A5F1A57E7259CB3CE79B619B25298A73EF66" | tee -a $HOME/.gnupg/sshcontrol || exit 1
+      #FD68A5F1A57E7259CB3CE79B619B25298A73EF66
+    else
+      echo "FD68A5F1A57E7259CB3CE79B619B25298A73EF66" | tee -a $HOME/.gnupg/sshcontrol > /dev/null || exit 1
+    fi
+  else
+    [ $debug -ge 2 ] && echo -e "\033[0;90m[\033[1;92mInfo\033[0;90m] :\033[0m Keygrip is already in sshcontrol"
+  fi
+  [ $debug -ge 1 ] && echo -e "\033[0;90m[\033[1;92mInfo\033[0;90m] :\033[0m Initializing GPG" # Config took from ~/.zshrc
+  unset SSH_AGENT_PID
+  if [ ${gnupg_SSH_AUTH_SOCK_bye:-0} -ne $$ ]; then
+    export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+  fi
+  gpgconf --launch gpg-agent
+  gpg-connect-agent updatestartuptty /bye > /dev/null
+  export GPG_TTY=$(tty)
+fi
+
 # Restore stowed configs (if ~/dotfiles exists)
 echo -e "\033[0;90m[\033[1;92mInfo\033[0;90m] :\033[0m Restoring configurations"
 [ $debug -ge 1 ] && echo -e "\033[0;90m[\033[1;92mInfo\033[0;90m] :\033[0m Checking to see if $HOME/dotfiles exists"

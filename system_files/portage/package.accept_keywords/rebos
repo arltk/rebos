@@ -1,33 +1,71 @@
 ### CORE
 app-misc/brightnessctl ~amd64 # Required to emerge
+
 app-misc/nerdfetch ~amd64 # Required to emerge
+
 app-shells/zoxide ~amd64 # Required to emerge
+
 media-fonts/nerdfonts ~amd64 # Required to emerge
 
+app-misc/superfile ~amd64 # Required to emerge
+app-misc/yazi ~amd64 # Required to emerge
+
+### DEVELOPMENT
+app-admin/terraform ~amd64 # Required to emerge
+
+app-containers/docker-swarm ~amd64 # Required to emerge
+
+app-containers/podman-compose ~amd64 # Required to emerge
+app-containers/podman-tui ~amd64 # Required to emerge
+
+app-emulation/vagrant ~amd64 # Required to emerge
+dev-libs/protobuf ~amd64 # Required to emerge, required by app-emulation/vagrant
+dev-ruby/google-protobuf ~amd64 # Required to emerge, required by app-emulation/vagrant
+dev-ruby/grpc ~amd64 # Required to emerge, required by app-emulation/vagrant
+dev-ruby/hashicorp-checkpoint ~amd64 # Required to emerge, required by app-emulation/vagrant
+dev-ruby/ipaddr ~amd64 # Required to emerge, required by app-emulation/vagrant
+dev-ruby/jwt ~amd64 # Required to emerge, required by app-emulation/vagrant
+dev-ruby/oauth2 ~amd64 # Required to emerge, required by app-emulation/vagrant
+dev-ruby/rgl ~amd64 # Required to emerge, required by app-emulation/vagrant
+dev-ruby/pairing_heap ~amd64 # Required to emerge, required by app-emulation/vagrant
+dev-ruby/snaky_hash ~amd64 # Required to emerge, required by app-emulation/vagrant
+dev-ruby/stream ~amd64 # Required to emerge, required by app-emulation/vagrant
+dev-ruby/vagrant_cloud ~amd64 # Required to emerge, required by app-emulation/vagrant
+dev-ruby/version_gem ~amd64 # Required to emerge, required by app-emulation/vagrant
+
 ### HYPRLAND
+gui-apps/hypridle ~amd64 ~amd64 # Required to emerge
+dev-cpp/sdbus-c++ ~amd64 # Required to emerge, required by gui-apps/hypridle
 
-gui-wm/hyprland ~amd64 # Get the latest features out of Hyprland
-dev-libs/hyprgraphics ~amd64 # Required by gui-wm/hyprland ~amd64
-gui-libs/hyprland-qtutils ~amd64 # Required by gui-wm/hyprland ~amd64
+gui-apps/hyprlock ~amd64 # Required to emerge
 
-gui-apps/hypridle ~amd64 # Required to emerge
-dev-cpp/sdbus-c++ ~amd64 # Required for gui-apps/hypridle
+gui-apps/hyprpicker ~amd64 # Required to emerge
+
+gui-apps/hyprshot ~amd64 # Required to emerge
+
+gui-apps/hyprsysteminfo ~amd64 # Required to emerge
+dev-libs/hyprlang ~amd64 # Required to emerge, required by gui-apps/hyprsysteminfo
+gui-libs/hyprland-qt-support ~amd64 # Required to emerge, required by gui-apps/hyprsysteminfo
+
+gui-apps/rofi-wayland ~amd64 # Required to emerge
 
 gui-apps/swww ~amd64 # Required to emerge
-gui-apps/hyprlock ~amd64 # Required to emerge
-gui-apps/hyprpaper ~amd64 # Required to emerge
-gui-apps/hyprpicker ~amd64 # Required to emerge
-gui-apps/hyprshot ~amd64 # Required to emerge
-gui-apps/rofi-wayland ~amd64 # Required to emerge
-gui-libs/xdg-desktop-portal-hyprland # Required to emerge
+
+gui-libs/xdg-desktop-portal-hyprland ~amd64 # Required to emerge
+
 gui-wm/hyprland-contrib ~amd64 # Required to emerge
+
 sys-auth/hyprpolkitagent ~amd64 # Required to emerge
 
-x11-misc/pcmanfm ~amd64 # File explorer, required to emerge
-x11-libs/libfm ~amd64 # Required by x11-misc/pcmanfm
-
-www-client/firefox ~amd64 # Keep firefox up-to-date
-
+### GUI CORE
 games-util/steam-launcher ~amd64 # Required to emerge
-sys-libs/libudev-compat ~amd64 # Required by games-util/steam-launcher
-games-util/game-device-udev-rules ~amd64 # Required by games-util/steam-launcher
+games-util/game-device-udev-rules ~amd64 # Required to emerge, required by games-util/steam-launcher
+sys-libs/libudev-compat ~amd64 # Required to emerge, required by games-util/steam-launcher
+
+games-util/heroic-bin ~amd64 # Required to emerge
+
+media-videos/obs-studio ~amd64 # Required to emerge
+
+agmes-util/lutris ~amd64 # Required to emerge
+dev-python/moddb ~amd64 # Required to emerge, required by games-util/lutris
+dev-python/pypresence ~amd64 # Required to emerge, required by games-util/lutris

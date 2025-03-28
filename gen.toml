@@ -5,9 +5,9 @@
 # Other generation files to import. (Example: intensive_apps -> ~/.config/rebos/imports/intensive_apps.toml)
 imports = [
 	"core",
+  "development",
 	"hyprland",
   "gui-core",
-  "virtualization",
     # "intensive_apps",
 ]
 

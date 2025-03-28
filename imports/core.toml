@@ -55,21 +55,27 @@ items = [
   "dev-vcs/git", # Version manager, very essential #TODO: Redo description, version manager is not the right word
   "sys-apps/hwdata", # Provides useful hardware data
   "sys-apps/pciutils", # Provides useful PCI data
-  "sys-process/btop",
-  "sys-process/htop",
+  "sys-process/btop", # Displays information about system usage and some process info
+  "sys-process/htop", # Displays information regarding system usage and processes
 
 # Extended Utilities
+  "app-crypt/yubikey-manager", # Yubikey management tools
   "app-shells/fzf", # Terminal fuzzy finder, requires additional configurations
+  "app-shells/starship", # Minimal, customizable prompt for any shell
   "app-shells/zoxide", # Better version of cd, requires additional configurations
   "app-shells/zsh", # Improvement on BASH, requires a .zshrc file
   "app-shells/zsh-completions", # Auto-completions for ZSH
   "dev-util/git-delta", # Allows for better Git differences
   "media-video/ffmpeg", # Utility for manipulating audio/video
+  "media-video/ffmpegthumbnailer", # Displays thumbnails in file managers
   "net-analyzer/nmap", # Useful for scanning networks
   "net-misc/yt-dlp", # YouTube video downloader
   "sys-apps/bat", # Better version of cat. Cat is still useful, so do not alias. Requiers additional configurations
   "sys-apps/eza", # Better version of ls. Requires additional configurations
   "sys-apps/fd", # Better version of find #TODO: Redo descrption
+  "sys-apps/grep", # GNU Regular ExPression searcher
+  "sys-apps/ripgrep", # Search tool that combines the usability of ag with the raw speed of grep
+  "sys-apps/ripgrep-all", # Like Ripgrep, but also searches PDFs, Office documents, archives, etc
   "sys-libs/gpm", # General Purpose Mouse server, allows mouse in tty mode
   "sys-power/tlp", # Laptop power utility
 
@@ -89,6 +95,10 @@ items = [
   "media-fonts/nerdfonts", # Adds new fonts (specified in use flags) and symbols
   "net-libs/nodejs", # Dependency for NVIM configurations
 
+# File Managers
+  "superfile", # Terminal-based file manager
+  "app-misc/yazi", # Terminal-based file manager
+
 # Fonts
   "media-fonts/noto", # Noto fonts
   "media-fonts/noto-cjk", # CJK fonts
@@ -96,7 +106,7 @@ items = [
 
 # Terminal Web Browser
   "www-client/links", # Web browser within the terminal, useful for crawling thru download pages, also as a backup
-  ]
+]
 
   [managers.cargo]
   items = [
@@ -109,11 +119,11 @@ items = [
     "cargo-update", # A cargo subcommand for checking and applying updates to installed executables
     "cermic", # Print .png images in your terminal as ascii art
     "shabi", # (S)imple (H)ex (A)nd (B)inary (I)nspector - CLI Tool
+    "termova", # Video player in the terminal
     "tlrc", # Tldr but rust
     "ttyper", # Terminal-based typing test
     "tui48", # An elegant and faithful 2048 clone in the terminal
-    "tuido", # Terminal-basd to-do list
-    "yazi-fm", # Terminal file manager
+    "tuido", # Terminal-based to-do list
   ]
 
   [managers.openrc_default]

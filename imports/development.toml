@@ -1,12 +1,26 @@
 [managers.system]
 items = [
+  # Core
   "app-admin/ansible", # Infrastructure as Code software
   "app-admin/opentofu", # Terraform fork
   "app-admin/terraform", # Infrastructure as Code software
+  "app-containers/containerd", # Standard containerization tool
   "app-containers/docker", # Containerization software
   "app-containers/docker-compose", # Contaiers as Code service for Docker
   "app-containers/docker-swarm", # Cluster Docker containers
   "app-containers/podman", # Containerization software
   "app-containers/podman-compose", # Run docker-compose using Podman
   "app-containers/podman-tui", # Terminal user interface for Podman
+  "app-emulation/libvirt",
+  "app-emulation/qemu", # Allows for QEMU emulation
+  "app-emulation/vagrant", # A tool for building and distributing development environments
+  "app-shells/powershell", # Cross-platform shell and scripting tool, developed by Microsoft
+
+  # GUI Core
+  "app-emulation/virt-manager", # GUI manager for machine emulation
+]
+
+[managers.openrc_default]
+items = [
+  "libvirtd",
 ]

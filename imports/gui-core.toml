@@ -1,7 +1,27 @@
 [managers.system]
 items = [
+  # Core Utilities
+  #"kde-misc/krusader", # File Explorer (might switch, check out pcmanfm)
+  "app-office/libreoffice", # Office suite
+  "mail-client/thunderbird", # Thunderbird mail client
+	"x11-terms/kitty", # Terminal emulator
+
+  # Extended Utilities
+  "media-gfx/gimp", # GNU Image Manipulation Program
+  "media-video/obs-studio", # Recording & streaming client
+  "net-im/signal-desktop-bin", # Signal messaging client
+  
+  # Games
+  "games-action/prismlauncher", # Minecraft launcher, fork of MultiMC
+  "games-util/heroic-bin", # Heroic games launcher (Epic Games open-source launcher)
+  "games-util/lutris", # Open source gaming platform for GNU/Linux
+  "games-util/steam-launcher", # Steam launcher
+
+  # Miscellaneous applications
+  "kde-apps/kdenlive", # Lightweight video editing application
+  "net-analyzer/wireshark", # Utility for analzying network traffic
   "net-misc/remmina", # RDP & remote-access client
-  "www-client/firefox", # Web browser, requires configs or sync
+  "net-p2p/qbittorrent", # Torrenting client, written in C++ and Qt
 ]
 
 [managers.flatpak]
@@ -12,3 +32,12 @@ items = [
   "me.proton.Mail", # ProtonMail client, might want to forego this in favor of using the web browser
 ]
 
+# Brave
+# Floorp
+# Ubisoft
+# Battle.net*
+# AHK?
+# IRC Client
+## KDenLive
+# Davinchi Resolve
+# ATAK shit

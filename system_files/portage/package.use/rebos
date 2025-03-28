@@ -28,7 +28,6 @@ sys-auth/seatd builtin server # Allow seatd to have the builtin server #TODO: Re
 app-crypt/gcr gtk # Required by x11-misc/pcmanfm
 x11-libs/libfm gtk # Required by x11-misc/pcmanfm
 
-www-client/firefox dbus # Required to emerge
 media-libs/libvpx postproc # Required by www-client/firefox
 
 media-sound/pulseaudio bluetooth # Add bluetooth support to pulseaudio

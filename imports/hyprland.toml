@@ -8,7 +8,7 @@ items = [
 	"gui-apps/hyprlock", # Screen lock for Hyprland
 	"gui-apps/hyprpicker", # Utility to pick colors from the Hyprland screen
   "gui-apps/hyprshot", # Screenshot tool for Hyprland #TODO: Investigate flameshot
-  # "gui-apps/hyprsysteminfo", # GUI app to display system information #TODO: Wrong package name, is it avail on gentoo?
+  "gui-apps/hyprsysteminfo", # GUI app to display system information #TODO: Wrong package name, is it avail on gentoo?
   "gui-apps/rofi-wayland", # App launcher
   "gui-apps/swww", # Wallpaper manager
   "gui-apps/waybar", # Status bar
@@ -18,13 +18,11 @@ items = [
   "media-sound/pavucontrol", # PulseAudio VolUme Controller
   "media-sound/playerctl", # CLI utility to control media players over MPRIS
   "media-sound/pulseaudio", # Sound server
-  #"kde-misc/krusader", # File Explorer (might switch, check out pcmanfm)
   "sys-auth/hyprpolkitagent", # Polkit authentication daemon
   "sys-auth/seatd", # Strong dependency to make Hyprland work, requires "builtin" and "server" USE flags without additional packages
   "x11-apps/xrandr", # Useful utility
 	"x11-base/xorg-proto", # Hyprland dependency, emerge fails without this package
 	"x11-misc/sddm", # Login Manager #TODO: requires additional configs
-	"x11-terms/kitty", # Terminal Emulator
 
 	# Hyprland Add-ons
   "gui-libs/hyprland-qtutils", # Various Hyprland backend utilities, e.g. dialogs & popups

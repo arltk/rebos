@@ -23,6 +23,7 @@ items = [
   "sys-apps/dbus", # Inter-process Communication (IPC) system
   "sys-apps/pciutils", # Various utilities regarding PCI devices
   "sys-auth/elogind", # Init login system
+  "sys-apps/fwupd", # Firmware updater
   "sys-fs/btrfs-progs", # Support for BTRFS
   "sys-fs/dosfstools", # Support for DOS (BIOS stuff)
   "sys-fs/e2fsprogs", # Suport for EXT

@@ -69,3 +69,8 @@ media-videos/obs-studio ~amd64 # Required to emerge
 agmes-util/lutris ~amd64 # Required to emerge
 dev-python/moddb ~amd64 # Required to emerge, required by games-util/lutris
 dev-python/pypresence ~amd64 # Required to emerge, required by games-util/lutris
+
+media-video/obs-studio ~amd64 # Required to emerge
+
+games-util/lutris # Required to emerge
+dev-ruby/googleapis-common-protos-types ~amd64 # Required by app-emulation/vagrant

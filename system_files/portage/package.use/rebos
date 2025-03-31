@@ -1,4 +1,7 @@
 ### CORE
+*/* -systemd # Disable systemd support (unless manually enabled)
+*/* udev # We technically use fakeudev, but this is important ig
+
 app-admin/syslog-ng geoip2 # Add support for geo lookup based on IPs
 
 */* networkmanager # Enable global NetworkManager support
@@ -18,6 +21,8 @@ net-dns/dnsmasq script # Required by app-emulation/libvirt
 net-libs/gnutls pkcs11 tools # Required by app-emulation/libvirt
 
 ### HYPRLAND
+sys-auth/seatd builtin server # Required for a builtin server
+
 kde-frameworks/sonnet qml # Required by gui-wm/hyprland
 app-text/xmlto text # Required by gui-wm/hyprland
 dev-qt/qt5compat qml # Required by gui-wm/hyprland
@@ -32,6 +37,8 @@ sys-auth/polit-qt qt6 # Required by sys-auth/hyprpolkitagent
 ### GUI CORE
 */* wayland X # Add support for both wayland (main compositor) and Xorg (for Xorg-only applications)
 */* opengl vulkan # Add 3D graphics support
+*/* dbus elogind # Add support for elogind and dbus
+*/* alsa pipewire pulseaudio # Enable global support for audio stuff
 
 sys-auth/pambase elogind # Required by x11-misc/sddm
 
@@ -108,3 +115,15 @@ app-text/poppler cairo # Required by media-gfx/gimp
 media-libs/gegl cairo # Required by media-gfx/gimp
 
 media-libs/postproc # Required by mail-client/thunderbird
+sys-libs/gdbm abi_x86_32 # Required by sys-auth/elogind, sys-auth/polkit
+
+dev-util/spirv-tools abi_x86_32 # Required by kde-apps/kdenlive
+media-libs/mlt frei0r qt6 sdl ffmpeg xml # Required by kde-apps/kdenlive
+media-video/ffmpeg libass sdl # Required by kde-apps/kdenlive
+x11-libs/libXrender abi_x86_32 # Required by kde-apps/kdenlive
+x11-libs/libxshmfence abi_x86_32 # Required by kde-apps/kdenlive
+media-libs/libvpx postproc # Required by mail-client/thunderbird
+sys-auth/polkit-qt qt6 # Required by sys-auth/hyprpolkitagent
+media-libs/libsdl2 alsa gles2 jack opengl pulseaudio # Required by media-video/ffmpegthumbnailer
+x11-base/xwayland libei # Required by games-util/steam-launcher
+sys-apps/dbus abi_x86_32 # Required to emerge

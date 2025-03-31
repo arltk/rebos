@@ -14,7 +14,7 @@ items = [
   "app-emulation/libvirt",
   "app-emulation/qemu", # Allows for QEMU emulation
   "app-emulation/vagrant", # A tool for building and distributing development environments
-  "app-shells/powershell", # Cross-platform shell and scripting tool, developed by Microsoft
+  "app-shells/pwsh", # Cross-platform shell and scripting tool, developed by Microsoft
 
   # GUI Core
   "app-emulation/virt-manager", # GUI manager for machine emulation

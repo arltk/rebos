@@ -14,9 +14,9 @@ if [ -d "$HOME/dotfiles" ]; then
 else
   [ $debug -ge 1 ] && echo -e "\033[0;90m[\033[1;92mInfo\033[0;90m] :\033[0m $HOME/dotfiles does not exist. Attempting to pull latest git commit"
   if [ $debug -ge 2 ]; then
-    git clone https://github.com/arltk/dotfiles --recurse $HOME/dotfiles || exit 1
+    git clone https://github.com/arltk/dotfiles --recurse $HOME/dotfiles
   else
-    git clone https://github.com/arltk/dotfiles --recurse $HOME/dotfiles > /dev/null || exit 1
+    git clone https://github.com/arltk/dotfiles --recurse $HOME/dotfiles > /dev/null
   fi
 fi
 [ $debug -ge 2 ] && echo -e "\033[0;90m[\033[1;92mInfo\033[0;90m] :\033[0m Checking to see if app-admin/stow is installed"
@@ -30,19 +30,6 @@ else
   git restore . > /dev/null || exit 1
 fi
 popd
-
-# Change default shell to zsh
-[ $debug -ge 1 ] && echo -e "\033[0;90m[\033[1;94mDebug\033[0;90m] :\033[0m Checking to see if ZSH is installed"
-if [ $(command -v zsh) ]; then
-  [ $debug -ge 1 ] && echo -e "\033[0;90m[\033[1;94mDebug\033[0;90m] :\033[0m ZSH is installed"
-  #TODO: Check to see if ZSH is the shell
-  echo -e "\033[0;90m[\033[1;92mInfo\033[0;90m] :\033[0m Upgrading shell to ZSH"
-  [ $debug -ge 1 ] && echo -e "\033[0;90m[\033[1;94mDebug\033[0;90m] :\033[0m Changing shell to ZSH"
-  chsh --shell "$(which zsh)" || exit 1
-else
-  [ $debug -ge 1 ] && echo -e "\033[0;90m[\033[1;94mDebug\033[0;90m] :\033[0m ZSH is not installed"
-fi
-
 
 #TODO:
 # Refactor to use custom $groups variable and account for multiple groups

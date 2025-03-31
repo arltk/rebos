@@ -18,7 +18,7 @@ items = [
   "games-util/steam-launcher", # Steam launcher
 
   # Miscellaneous applications
-  "kde-apps/kdenlive", # Lightweight video editing application
+  #"kde-apps/kdenlive", # Lightweight video editing application
   "net-analyzer/wireshark", # Utility for analzying network traffic
   "net-misc/remmina", # RDP & remote-access client
   "net-p2p/qbittorrent", # Torrenting client, written in C++ and Qt

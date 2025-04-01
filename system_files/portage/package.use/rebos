@@ -41,7 +41,7 @@ sys-auth/polit-qt qt6 # Required by sys-auth/hyprpolkitagent
 */* alsa pipewire pulseaudio # Enable global support for audio stuff
 */* policykit # Required for some flatpak uses
 
-sys-auth/pambase elogind # Required by x11-misc/sddm
+sys-apps/xdg-desktop-portal flatpak # Enable flatpak support
 
 dev-libs/libdbusmenu gtk3 # Required by net-misc/remmina
 

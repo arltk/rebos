@@ -39,10 +39,13 @@ sys-auth/polit-qt qt6 # Required by sys-auth/hyprpolkitagent
 */* opengl vulkan # Add 3D graphics support
 */* dbus elogind # Add support for elogind and dbus
 */* alsa pipewire pulseaudio # Enable global support for audio stuff
+*/* policykit # Required for some flatpak uses
 
 sys-auth/pambase elogind # Required by x11-misc/sddm
 
 dev-libs/libdbusmenu gtk3 # Required by net-misc/remmina
+
+net-misc/remmina rdp # Enable RDP support in Remmina
 
 app-arch/bzip2 abi_x86_32 # Required by games-util/steam-launcher
 app-arch/zstd abi_x86_32 # Required by games-util/steam-launcher

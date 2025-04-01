@@ -20,6 +20,7 @@ items = [
   "media-sound/pulseaudio", # Sound server
   "sys-auth/hyprpolkitagent", # Polkit authentication daemon
   "sys-auth/seatd", # Strong dependency to make Hyprland work, requires "builtin" and "server" USE flags without additional packages
+  "x11-apps/xdm", # Sets XDM variables, required to get SDDM working
   "x11-apps/xrandr", # Useful utility
 	"x11-base/xorg-proto", # Hyprland dependency, emerge fails without this package
 	"x11-misc/sddm", # Login Manager #TODO: requires additional configs

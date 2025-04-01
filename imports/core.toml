@@ -2,7 +2,7 @@
 items = [
   "app-admin/sudo", # requires additional configuration
   "app-eselect/eselect-repository", # requires additional configuration
-  "dev-lang/rust-bin",
+  "dev-lang/rust",
   "sys-apps/flatpak", # requires additional configuration
 ]
 
@@ -120,7 +120,7 @@ items = [
     "cargo-update", # A cargo subcommand for checking and applying updates to installed executables
     "cermic", # Print .png images in your terminal as ascii art
     "shabi", # (S)imple (H)ex (A)nd (B)inary (I)nspector - CLI Tool
-    "termova", # Video player in the terminal
+    #"termova", # Video player in the terminal
     "tlrc", # Tldr but rust
     "ttyper", # Terminal-based typing test
     "tui48", # An elegant and faithful 2048 clone in the terminal

@@ -20,6 +20,9 @@ net-firewall/iptables nftables # Required for app-containers/podman
 net-dns/dnsmasq script # Required by app-emulation/libvirt
 net-libs/gnutls pkcs11 tools # Required by app-emulation/libvirt
 
+app-emulation/virt-manager gui # Enable the virt-manager GUI
+net-misc/spice-gtk usbredir # Required by app-emulation/virt-manager gui
+
 ### HYPRLAND
 sys-auth/seatd builtin server # Required for a builtin server
 

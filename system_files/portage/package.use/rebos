@@ -20,6 +20,9 @@ net-firewall/iptables nftables # Required for app-containers/podman
 net-dns/dnsmasq script # Required by app-emulation/libvirt
 net-libs/gnutls pkcs11 tools # Required by app-emulation/libvirt
 
+app-emulation/virt-manager gui # Enable the virt-manager GUI
+net-misc/spice-gtk usbredir # Required by app-emulation/virt-manager gui
+
 ### HYPRLAND
 sys-auth/seatd builtin server # Required for a builtin server
 
@@ -41,7 +44,7 @@ sys-auth/polit-qt qt6 # Required by sys-auth/hyprpolkitagent
 */* alsa pipewire pulseaudio # Enable global support for audio stuff
 */* policykit # Required for some flatpak uses
 
-sys-auth/pambase elogind # Required by x11-misc/sddm
+sys-apps/xdg-desktop-portal flatpak # Enable flatpak support
 
 dev-libs/libdbusmenu gtk3 # Required by net-misc/remmina
 

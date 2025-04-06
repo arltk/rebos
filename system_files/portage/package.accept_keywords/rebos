@@ -47,6 +47,8 @@ gui-apps/hyprsysteminfo ~amd64 # Required to emerge
 dev-libs/hyprlang ~amd64 # Required to emerge, required by gui-apps/hyprsysteminfo
 gui-libs/hyprland-qt-support ~amd64 # Required to emerge, required by gui-apps/hyprsysteminfo
 
+gui-libs/hyprutils ~amd64 # Required for miscellanous hyprland packages to emerge
+
 gui-apps/rofi-wayland ~amd64 # Required to emerge
 
 gui-apps/swww ~amd64 # Required to emerge

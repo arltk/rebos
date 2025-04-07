@@ -4,6 +4,8 @@
 
 app-admin/syslog-ng geoip2 # Add support for geo lookup based on IPs
 
+net-misc/rsync zstd # Build rsync with ZSTD compression support
+
 */* networkmanager # Enable global NetworkManager support
 net-misc/networkmanager bluetooth iptables iwd syslog # Add various support to NetworkManager
 

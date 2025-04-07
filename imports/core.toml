@@ -53,7 +53,8 @@ items = [
   "app-text/tree", # Displays files in a tree
   "app-text/wgetpaste", # Allows for pasting of logs for assists with errors
   "dev-util/pkgdev", # Portage utilities
-  "dev-vcs/git", # Version manager, very essential #TODO: Redo description, version manager is not the right word
+  "dev-vcs/git", # Version control system
+  "net-dns/bind-tools", # Useful utilities, such as nslookup
   "sys-apps/hwdata", # Provides useful hardware data
   "sys-apps/pciutils", # Provides useful PCI data
   "sys-process/btop", # Displays information about system usage and some process info

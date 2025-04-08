@@ -14,6 +14,8 @@ net-libs/nodejs npm # Enable Node Package Manager support, soft requirement for 
 
 app-crypt/gpgme usb # Enable USB support for smart cards
 
+media-video/ffmpeg jack lame openh264 opus qrcode quirc sdl ssh x264 x265 # Add various support to FFMPEG
+
 ### DEVELOPMENT
 net-firewall/iptables nftables # Required for app-containers/podman
 
@@ -43,6 +45,7 @@ sys-auth/polit-qt qt6 # Required by sys-auth/hyprpolkitagent
 */* dbus elogind # Add support for elogind and dbus
 */* alsa pipewire pulseaudio # Enable global support for audio stuff
 */* policykit # Required for some flatpak uses
+*/* gtk # Add global support for GTK for graphical user interfaces
 
 sys-apps/xdg-desktop-portal flatpak # Enable flatpak support
 

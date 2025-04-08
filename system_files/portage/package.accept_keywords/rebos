@@ -76,3 +76,5 @@ media-video/obs-studio ~amd64 # Required to emerge
 
 games-util/lutris # Required to emerge
 dev-ruby/googleapis-common-protos-types ~amd64 # Required by app-emulation/vagrant
+
+media-video/jellyfin-media-player ~amd64 # Required to emerge

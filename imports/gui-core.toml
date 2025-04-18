@@ -9,6 +9,7 @@ items = [
   # Extended Utilities
   "media-gfx/gimp", # GNU Image Manipulation Program
   "media-video/obs-studio", # Recording & streaming client
+  "net-im/discord", # Discord client
   "net-im/signal-desktop-bin", # Signal messaging client
   
   # Games
@@ -28,7 +29,6 @@ items = [
 items = [
   "com.brave.Browser", # Chromium-based web browser
   "com.dec05eba.gpu_screen_recorder", # NVIDIA Shadowplay clone
-  "com.discordapp.Discord", # Discord client
   "com.protonvpn.www", # ProtonVPN client
   "one.ablaze.floorp", # Firefox-based web browser
   "me.proton.Mail", # ProtonMail client, might want to forego this in favor of using the web browser

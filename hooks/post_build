@@ -118,7 +118,7 @@ checksum_name=$(basename $checksum_url)
 [ $debug -ge 1 ] && echo -e "\033[0;90m[\033[1;94mDebug\033[0;90m] :\033[0m Downloading checksum: $checksum_name"
 [ $debug -ge 2 ] && curl -# -L $checksum_url -o $checksum_name || curl -# -L $checksum_url -o $checksum_name --no-progress-meter
 [ $debug -ge 1 ] && echo -e "\033[0;90m[\033[1;94mDebug\033[0;90m] :\033[0m Verifying tarball $tarball_name with checksum $checksum_name"
-if [ $(sha512sum -c $checksum_name) -eq 0 ]; then
+if sha512sum -c $checksum_name; then
   [ $debug -ge 1 ] && echo -e "\033[0;90m[\033[1;94mDebug\033[0;90m] :\033[0m Checksum is correct"
   [ $debug -ge 1 ] && echo -e "\033[0;90m[\033[1;94mDebug\033[0;90m] :\033[0m Extracting tarball"
   mkdir -p ~/.steam/steam/compatibilitytools.d

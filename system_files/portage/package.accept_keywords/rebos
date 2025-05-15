@@ -12,6 +12,8 @@ app-misc/yazi ~amd64 # Required to emerge
 
 dev-cpp/abseil-cpp ~amd64 # General utility, testing branch is fine, otherwise it will hold back some updates
 
+dev-python/pipx ~amd64 # Required to emerge with latest python builds
+dev-python/userpath ~amd64 # Required to emerge
 
 ### DEVELOPMENT
 app-admin/terraform ~amd64 # Required to emerge

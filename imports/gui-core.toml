@@ -3,10 +3,16 @@ items = [
   # Core Utilities
   #"kde-misc/krusader", # File Explorer (might switch, check out pcmanfm)
   "app-office/libreoffice", # Office suite
+  "gui-apps/wl-clipboard", # Clipboard manager
   "mail-client/thunderbird", # Thunderbird mail client
+  "media-gfx/feh", # Image viewer
+  "media-gfx/nomacs", # Image viewer with more features than feh
+  "media-video/vlc", # VLC media player
+  "x11-misc/pcmanfm", # File manager
 	"x11-terms/kitty", # Terminal emulator
 
   # Extended Utilities
+  "kde-apps/kdenlive", # Video editor
   "media-gfx/gimp", # GNU Image Manipulation Program
   "media-video/obs-studio", # Recording & streaming client
   "net-im/discord", # Discord client

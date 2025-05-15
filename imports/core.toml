@@ -55,8 +55,10 @@ items = [
   "dev-util/pkgdev", # Portage utilities
   "dev-vcs/git", # Version control system
   "net-dns/bind-tools", # Useful utilities, such as nslookup
+  "sys-apps/cpuid", # Linux tool to dump x86 CPUID information about the CPUs
   "sys-apps/hwdata", # Provides useful hardware data
   "sys-apps/pciutils", # Provides useful PCI data
+  "sys-apps/usbutils", # Get information on USB devices
   "sys-process/btop", # Displays information about system usage and some process info
   "sys-process/htop", # Displays information regarding system usage and processes
 
@@ -70,14 +72,18 @@ items = [
   "dev-util/git-delta", # Allows for better Git differences
   "media-video/ffmpeg", # Utility for manipulating audio/video
   "media-video/ffmpegthumbnailer", # Displays thumbnails in file managers
+  "net-analyzer/lft", # An advanced traceroute implementation
+  "net-analyzer/nload", # Console application which monitors network traffic and bandwidth usage in real time
   "net-analyzer/nmap", # Useful for scanning networks
   "net-misc/yt-dlp", # YouTube video downloader
   "sys-apps/bat", # Better version of cat. Cat is still useful, so do not alias. Requiers additional configurations
+  "sys-apps/etckeeper", # Version control for /etc files
   "sys-apps/eza", # Better version of ls. Requires additional configurations
   "sys-apps/fd", # Better version of find #TODO: Redo descrption
   "sys-apps/grep", # GNU Regular ExPression searcher
   "sys-apps/ripgrep", # Search tool that combines the usability of ag with the raw speed of grep
   "sys-apps/ripgrep-all", # Like Ripgrep, but also searches PDFs, Office documents, archives, etc
+  "sys-fs/ncdu", # NCurses Disk Usage tool
   "sys-libs/gpm", # General Purpose Mouse server, allows mouse in tty mode
   "sys-power/tlp", # Laptop power utility
 

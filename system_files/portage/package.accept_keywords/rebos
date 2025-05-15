@@ -10,6 +10,9 @@ media-fonts/nerdfonts ~amd64 # Required to emerge
 app-misc/superfile ~amd64 # Required to emerge
 app-misc/yazi ~amd64 # Required to emerge
 
+dev-cpp/abseil-cpp ~amd64 # General utility, testing branch is fine, otherwise it will hold back some updates
+
+
 ### DEVELOPMENT
 app-admin/terraform ~amd64 # Required to emerge
 
@@ -20,6 +23,7 @@ app-containers/podman-tui ~amd64 # Required to emerge
 
 app-emulation/vagrant ~amd64 # Required to emerge
 dev-libs/protobuf ~amd64 # Required to emerge, required by app-emulation/vagrant
+dev-libs/protobuf-c ~amd64 # Useful to keep up-to-date, some things depend on it
 dev-ruby/google-protobuf ~amd64 # Required to emerge, required by app-emulation/vagrant
 dev-ruby/grpc ~amd64 # Required to emerge, required by app-emulation/vagrant
 dev-ruby/hashicorp-checkpoint ~amd64 # Required to emerge, required by app-emulation/vagrant
@@ -36,6 +40,7 @@ dev-ruby/version_gem ~amd64 # Required to emerge, required by app-emulation/vagr
 ### HYPRLAND
 gui-apps/hypridle ~amd64 ~amd64 # Required to emerge
 dev-cpp/sdbus-c++ ~amd64 # Required to emerge, required by gui-apps/hypridle
+dev-libs/hyprland-protocols ~amd64 # Required for an update
 
 gui-apps/hyprlock ~amd64 # Required to emerge
 
@@ -60,6 +65,9 @@ gui-wm/hyprland-contrib ~amd64 # Required to emerge
 sys-auth/hyprpolkitagent ~amd64 # Required to emerge
 
 ### GUI CORE
+x11-misc/pcmanfm ~amd64 # Required to emerge
+x11-libs/libfm ~amd64 # Required by x11-misc/pcmanfm
+
 games-util/steam-launcher ~amd64 # Required to emerge
 games-util/game-device-udev-rules ~amd64 # Required to emerge, required by games-util/steam-launcher
 sys-libs/libudev-compat ~amd64 # Required to emerge, required by games-util/steam-launcher

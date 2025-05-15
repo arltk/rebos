@@ -18,6 +18,9 @@ app-crypt/gpgme usb # Enable USB support for smart cards
 
 media-video/ffmpeg jack lame openh264 opus qrcode quirc sdl ssh x264 x265 # Add various support to FFMPEG
 
+sys-apps/fwupd amdgpu bash-completion bluetooth elogind fastboot flashrom gnutls logitech lzma nvme spi tpm uefi # Various important USE flags
+x11-libs/libdrm video_cards_amdgpu # Required by sys-apps/fwupd
+
 ### DEVELOPMENT
 net-firewall/iptables nftables # Required for app-containers/podman
 
@@ -48,6 +51,7 @@ sys-auth/polit-qt qt6 # Required by sys-auth/hyprpolkitagent
 */* alsa pipewire pulseaudio # Enable global support for audio stuff
 */* policykit # Required for some flatpak uses
 */* gtk # Add global support for GTK for graphical user interfaces
+*/* icu # Required flag by a bunch of shit, just enable globally
 
 sys-apps/xdg-desktop-portal flatpak # Enable flatpak support
 
@@ -115,7 +119,7 @@ x11-libs/xcb-util-keysyms abi_x86_32 # Required by games-util/steam-launcher
 media-video/ffmpeg opus x264 # Required by media-videos/obs-studio
 
 dev-libs/xmlsec nss # Required by app-office/libreoffice
-media-libs/harfbuzz icu # Required by app-office/libreoffice
+#media-libs/harfbuzz icu # Required by app-office/libreoffice
 
 dev-libs/quazip qt6 # Requied by games-action/primslauncher
 sys-libs/zlib minizip # Required by games-action/prismlauncher
@@ -138,3 +142,9 @@ sys-auth/polkit-qt qt6 # Required by sys-auth/hyprpolkitagent
 media-libs/libsdl2 alsa gles2 jack opengl pulseaudio # Required by media-video/ffmpegthumbnailer
 x11-base/xwayland libei # Required by games-util/steam-launcher
 sys-apps/dbus abi_x86_32 # Required to emerge
+
+dev-qt/qtbase libproxy # Required by kde-apps/kdenlive
+kde-frameworks/kconfig qml # Required by kde-apps/kdenlive
+media-libs/opencv contribdnn contrib qt6 # Required by kde-apps/kdenlive
+
+dev-qt/qtbase cups # Required by media-gfx/nomacs

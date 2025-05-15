@@ -87,7 +87,43 @@ fi
 echo -e "\033[0;90m[\033[1;92mInfo\033[0;90m] :\033[0m Copying RC configs"
 [ $debug -ge 1 ] && echo -e "\033[0;90m[\033[1;92mInfo\033[0;90m] :\033[0m Copying $rebos_sysconfigs_path/rc.conf -> /etc/rc.conf"
 if [ $debug -ge 2 ]; then
-  sudo cp -v "$rebus_sysconfigs_path/rc.conf" "/etc/rc.conf" || exit 1
+  sudo cp -v "$rebos_sysconfigs_path/rc.conf" "/etc/rc.conf" || exit 1
 else
-  sudo cp "$rebus_sysconfigs_path/rc.conf" "/etc/rc.conf" || exit 1
+  sudo cp "$rebos_sysconfigs_path/rc.conf" "/etc/rc.conf" || exit 1
 fi
+
+# Copy update command
+echo -e "\033[0;90m[\033[1;92mInfo\033[0;90m] :\033[0m Copying update command"
+[ $debug -ge 1 ] && echo -e "\033[0;90m[\033[1;92mInfo\033[0;90m] :\033[0m Copying $rebos_system_files/scripts/update-system.sh -> /usr/local/bin/update"
+if [ $debug -ge 2 ]; then
+  sudo cp -v "$rebos_system_files/scripts/update-system.sh" "/usr/local/bin/update" || exit 1
+else
+  sudo cp "$rebos_system_files/scripts/update-system.sh" "/usr/local/bin/update" || exit 1
+fi
+[ $debug -ge 1 ] && echo -e "\033[0;90m[\033[1;92mInfo\033[0;90m] :\033[0m Changing permissions on /usr/local/bin/update"
+sudo chmod +x "/usr/local/bin/update"
+
+# Install proton-ge
+echo -e "\033[0;90m[\033[1;92mInfo\033[0;90m] :\033[0m Installing proton-ge"
+[ $debug -ge 1 ] && echo -e "\033[0;90m[\033[1;94mDebug\033[0;90m] :\033[0m Create temporary working directory for proton-ge"
+[ $debug -ge 2 ] && rm -rfv /tmp/proton-ge-custom || rm -rfv /tmp/proton-ge-custom
+mkdir /tmp/proton-ge-custom
+pushd /tmp/proton-ge-custom
+tarball_url=$(curl -s https://api.github.com/repos/GloriousEggroll/proton-ge-custom/releases/latest | grep browser_download_url | cut -d\" -f4 | grep .tar.gz)
+tarball_name=$(basename $tarball_url)
+[ $debug -ge 1 ] && echo -e "\033[0;90m[\033[1;94mDebug\033[0;90m] :\033[0m Downloading tarball: $tarball_name"
+[ $debug -ge 2 ] && curl -# -L $tarball_url -o $tarball_name || curl -# -L $tarball_url -o $tarball_name --no-progress-meter
+checksum_url=$(curl -s https://api.github.com/repos/GloriousEggroll/proton-ge-custom/releases/latest | grep browser_download_url | cut -d\" -f4 | grep .sha512sum)
+checksum_name=$(basename $checksum_url)
+[ $debug -ge 1 ] && echo -e "\033[0;90m[\033[1;94mDebug\033[0;90m] :\033[0m Downloading checksum: $checksum_name"
+[ $debug -ge 2 ] && curl -# -L $checksum_url -o $checksum_name || curl -# -L $checksum_url -o $checksum_name --no-progress-meter
+[ $debug -ge 1 ] && echo -e "\033[0;90m[\033[1;94mDebug\033[0;90m] :\033[0m Verifying tarball $tarball_name with checksum $checksum_name"
+if [ $(sha512sum -c $checksum_name) -eq 0 ]; then
+  [ $debug -ge 1 ] && echo -e "\033[0;90m[\033[1;94mDebug\033[0;90m] :\033[0m Checksum is correct"
+  [ $debug -ge 1 ] && echo -e "\033[0;90m[\033[1;94mDebug\033[0;90m] :\033[0m Extracting tarball"
+  mkdir -p ~/.steam/steam/compatibilitytools.d
+  [ $debug -ge 2 ] && tar -xvf $tarball_name -C ~/.steam/steam/compatibilitytools.d/ || tar -xf $tarball_name -C ~/.steam/steam/compatibilitytools.d/
+else
+  [ $debug -ge 1 ] && echo -e "\033[0;90m[\033[1;91mError\033[0;90m] :\033[0m Checksum does not match"
+fi
+popd

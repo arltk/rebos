@@ -1,6 +1,7 @@
 ### DEVELOPMENT
 app-admin/terraform BUSL-1.1 # Required to emerge
 app-emulation/vagrant BUSL-1.1 # Required to emerge
+net-analyzer/lft VOSTROM # Required to emerge
 
 ### GUI CORE
 games-util/steam-launcher ValveSteamLicense # Required to emerge

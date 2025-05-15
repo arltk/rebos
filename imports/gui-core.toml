@@ -34,10 +34,14 @@ items = [
 [managers.flatpak]
 items = [
   "com.brave.Browser", # Chromium-based web browser
-  "com.dec05eba.gpu_screen_recorder", # NVIDIA Shadowplay clone
   "com.protonvpn.www", # ProtonVPN client
   "one.ablaze.floorp", # Firefox-based web browser
   "me.proton.Mail", # ProtonMail client, might want to forego this in favor of using the web browser
+]
+
+[managers.flatpak_system]
+items = [
+  "com.dec05eba.gpu_screen_recorder", # NVIDIA Shadowplay clone
 ]
 
 # Ubisoft

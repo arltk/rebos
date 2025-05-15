@@ -40,7 +40,9 @@ dev-ruby/vagrant_cloud ~amd64 # Required to emerge, required by app-emulation/va
 dev-ruby/version_gem ~amd64 # Required to emerge, required by app-emulation/vagrant
 
 ### HYPRLAND
-gui-apps/hypridle ~amd64 ~amd64 # Required to emerge
+gui-apps/hypridle ~amd64 # Required to emerge
+gui-apps/hyprland-protocols ~amd64 # Required by gui-apps/hypridle
+
 dev-cpp/sdbus-c++ ~amd64 # Required to emerge, required by gui-apps/hypridle
 dev-libs/hyprland-protocols ~amd64 # Required for an update
 

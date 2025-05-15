@@ -1,0 +1,12 @@
+# Flatpak
+
+add = "sudo flatpak install --system --assumeyes #:?"
+remove = "sudo flatpak uninstall --system #:?"
+upgrade = "sudo flatpak upgrade --assumeyes --system"
+
+plural_name = "flatpak system"
+
+hook_name = "flatpak_system"
+
+[config]
+many_args = true

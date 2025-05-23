@@ -16,7 +16,7 @@ net-libs/nodejs npm # Enable Node Package Manager support, soft requirement for 
 
 app-crypt/gpgme usb # Enable USB support for smart cards
 
-media-video/ffmpeg jack lame openh264 opus qrcode quirc sdl ssh x264 x265 # Add various support to FFMPEG
+media-video/ffmpeg jack lame nvenc openh264 opus qrcode quirc sdl ssh x264 x265 # Add various support to FFMPEG
 
 sys-apps/fwupd amdgpu bash-completion bluetooth elogind fastboot flashrom gnutls logitech lzma nvme spi tpm uefi # Various important USE flags
 x11-libs/libdrm video_cards_amdgpu # Required by sys-apps/fwupd
@@ -43,6 +43,8 @@ media-plugins/alsa-plugins pulseaudio # Required by media-sound/pavucontrol
 
 dev-qt/qtgui egl # Required by sys-auth/hyprpolkitagent
 sys-auth/polit-qt qt6 # Required by sys-auth/hyprpolkitagent
+
+gui-apps/waybar jack mpd network tray upower wifi # Enable various supports for waybar
 
 ### GUI CORE
 */* wayland X # Add support for both wayland (main compositor) and Xorg (for Xorg-only applications)

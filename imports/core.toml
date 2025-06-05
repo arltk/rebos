@@ -29,6 +29,7 @@ items = [
   "sys-fs/e2fsprogs", # Suport for EXT
   "sys-fs/f2fs-tools", # Support for F2FS (Nice for USBs)
   "sys-fs/fuse:0", # AppImage dependency #TODO: Investigate me
+  "sys-fs/ntfs3g", # NTFS support
   "sys-fs/xfsprogs", # Support for XFS
   "sys-fs/zfs", # Support for ZFS
   "sys-kernel/modprobed-db", # Disables modules not-in-use by kernel, #TODO: requires additional configs
@@ -114,6 +115,12 @@ items = [
 
 # Terminal Web Browser
   "www-client/links", # Web browser within the terminal, useful for crawling thru download pages, also as a backup
+]
+
+[managers.flatpak]
+items = [
+  # Core utilities
+  "com.github.tchx84.Flatseal", # Flatpak permissions editor
 ]
 
   [managers.cargo]

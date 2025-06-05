@@ -79,6 +79,7 @@ sys-libs/libudev-compat ~amd64 # Required to emerge, required by games-util/stea
 games-util/heroic-bin ~amd64 # Required to emerge
 
 media-videos/obs-studio ~amd64 # Required to emerge
+net-libs/mbedtls ~amd64 # Required by media-video/obs-studio
 
 agmes-util/lutris ~amd64 # Required to emerge
 dev-python/moddb ~amd64 # Required to emerge, required by games-util/lutris

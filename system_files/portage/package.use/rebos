@@ -21,6 +21,8 @@ media-video/ffmpeg jack lame nvenc openh264 opus qrcode quirc sdl ssh x264 x265 
 sys-apps/fwupd amdgpu bash-completion bluetooth elogind fastboot flashrom gnutls logitech lzma nvme spi tpm uefi # Various important USE flags
 x11-libs/libdrm video_cards_amdgpu # Required by sys-apps/fwupd
 
+media-video/ffmpegthumbnailer jpeg png # Add JPEG and PNG support
+
 ### DEVELOPMENT
 net-firewall/iptables nftables # Required for app-containers/podman
 
@@ -150,3 +152,6 @@ kde-frameworks/kconfig qml # Required by kde-apps/kdenlive
 media-libs/opencv contribdnn contrib qt6 # Required by kde-apps/kdenlive
 
 dev-qt/qtbase cups # Required by media-gfx/nomacs
+
+### MISCELLANEOUS
+media-libs/opencv features2d # Required to emerge

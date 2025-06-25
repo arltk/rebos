@@ -127,3 +127,15 @@ else
   [ $debug -ge 1 ] && echo -e "\033[0;90m[\033[1;91mError\033[0;90m] :\033[0m Checksum does not match"
 fi
 popd
+
+# Change hyprland .desktop file
+echo -e "\033[0;90m[\033[1;92mInfo\033[0;90m] :\033[0m Changing Hyprland to launch with dbus-run-session"
+[ $debug -ge 1 ] && echo -e "\033[0;90m[\033[1;94mDebug\033[0;90m] :\033[0m Check to see if hyprland.desktop exists"
+if [ -f "/usr/share/wayland-sessions/hyprland.desktop" ]; then
+  [ $debug -ge 1 ] && echo -e "\033[0;90m[\033[1;94mDebug\033[0;90m] :\033[0m hyprland.desktop exists"
+  [ $debug -ge 1 ] && echo -e "\033[0;90m[\033[1;94mDebug\033[0;90m] :\033[0m Changing Hyprland to launch with dbus-run-session"
+  sed -i 's/Exec=Hyprland/Exec=dbus-run-session Hyprland/' /usr/share/wayland-sessions/hyprland.desktop && exit 1
+else
+  echo -e "\033[0;90m[\033[1;91mError\033[0;90m] :\033[0m Stow is not installed"
+  exit 1
+fi

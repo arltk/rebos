@@ -21,7 +21,9 @@ media-video/ffmpeg jack lame nvenc openh264 opus qrcode quirc sdl ssh x264 x265 
 sys-apps/fwupd amdgpu bash-completion bluetooth elogind fastboot flashrom gnutls logitech lzma nvme spi tpm uefi # Various important USE flags
 x11-libs/libdrm video_cards_amdgpu # Required by sys-apps/fwupd
 
-media-video/ffmpegthumbnailer jpeg png # Add JPEG and PNG support
+media-video/ffmpegthumbnailer gnome jpeg png # Add JPEG and PNG support
+
+media-gfx/imagemagick heif jpeg # Include USE flags for image converter (useful to convert .heic files from iPhones)
 
 ### DEVELOPMENT
 net-firewall/iptables nftables # Required for app-containers/podman
